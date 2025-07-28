@@ -1,7 +1,5 @@
-import Image from "next/image";
+const page = () => {
+  return <div>page</div>;
+};
 
-export default function Home() {
-  return (
-    <div></div>
-  );
-}
+export default page;

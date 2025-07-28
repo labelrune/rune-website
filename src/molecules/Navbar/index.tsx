@@ -72,7 +72,7 @@ const Navbar = () => {
                       </div>
 
                       {item.hasDropdown && isOpen && (
-                        <ul className="absolute top-full left-0 mt-2 w-40 bg-white border shadow-md z-20">
+                        <ul className="absolute top-full left-0 mt-2 w-40 bg-white border border-gray-200 shadow-md z-20">
                           {item.dropdownItems!.map((dd) => (
                             <li key={dd.label}>
                               <Link

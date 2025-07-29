@@ -1,11 +1,13 @@
+import Lables from "src/molecules/labels";
 import Landing from "src/molecules/landing";
-import TestimonialMarquee from "src/molecules/Testimonials";
+import Testimonials from "src/molecules/Testimonials";
 
 const page = () => {
   return (
     <div>
       <Landing />
-      <TestimonialMarquee />
+      <Lables />
+      <Testimonials />
     </div>
   );
 };

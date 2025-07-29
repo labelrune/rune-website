@@ -27,9 +27,9 @@ export const NavItems: NavbarType[] = [
     href: "#",
     hasDropdown: true,
     dropdownItems: [
-      { label: "Our Story", href: "#" },
-      { label: "Our Tribe", href: "#" },
+      { label: "Our Story", href: "/our-story" },
+      { label: "Our Tribe", href: "/our-tribe" },
     ],
   },
-  { id: "5", label: "Contact", href: "#", hasDropdown: false },
+  { id: "5", label: "Contact", href: "/contact", hasDropdown: false },
 ];

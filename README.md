@@ -1,6 +1,14 @@
 # Rune website
 Official repository for the Rune website.
 
+Folders to be created and used:
+
+- `/pure` - Folder for pure components
+- `/molecules` - Folder for components that have state management
+- `/types` - Folder for files for defining types
+- `/constants` - Folder for defining constants (strings, links, image paths)
+- `/utils` - Folder for defining common / utility functions
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

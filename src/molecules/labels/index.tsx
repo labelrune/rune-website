@@ -7,7 +7,7 @@ const Lables = () => {
     (value) => typeof value === "number"
   );
   return (
-    <div className="p-8">
+    <div className="md:p-8 p-3">
       {catalougeEnumsArray.map((catalouge) => (
         <LabelsData catalouge={catalouge} key={catalouge} />
       ))}

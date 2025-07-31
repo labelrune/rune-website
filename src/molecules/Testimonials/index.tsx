@@ -11,9 +11,9 @@ const Testimonials = () => {
   const pathname = usePathname();
   return (
     <div className="flex flex-col items-center justify-center gap-6 mt-10">
-      <div className="text-[30px] text-black">Our Tribe</div>
+      <div className="text-[24px] md:text-[30px] text-black">Our Tribe</div>
       {pathname === "/our-tribe" && (
-        <div className="flex items-center justify-center text-center text-[18px] leading-8 text-gray-600 max-w-2xl">
+        <div className="flex items-center justify-center text-center text-sm md:text-[18px] leading-8 text-gray-600 max-w-2xl">
           It warms our heart to see our lovely clients flaunting their beautiful
           pieces from our Label. It brings us emmense pleasure when they tell us
           about the fabric , fit and comfort of our garments . Our community is

@@ -37,11 +37,14 @@ const LabelsData = ({ catalouge }: { catalouge: number }) => {
           View Collection
         </Link>
       </div>
-      <div className="flex w-full gap-[2%] overflow-x-scroll snap-x snap-mandatory scroll-smooth scrollbar-hide">
+      <div className="flex w-full md:gap-[2%] gap-3 overflow-x-scroll snap-x snap-mandatory scroll-smooth scrollbar-hide">
         {filteredCatalogueData.map((item, index) => {
           return (
-            <div className="snap-center flex flex-col gap-3 group" key={index}>
-              <div className="w-[357px] aspect-[357/618] relative cursor-pointer rounded-sm">
+            <div
+              className="snap-center flex flex-col gap-2 md:gap-3 group"
+              key={index}
+            >
+              <div className="md:w-[357px] w-[311.3px] md:aspect-[357/618] h-[530px] relative cursor-pointer rounded-sm">
                 <img
                   src={item.imageUrl[0]}
                   alt={item.title}

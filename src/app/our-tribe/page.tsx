@@ -3,7 +3,7 @@ import Testimonials from "src/molecules/Testimonials";
 
 const OurTribe = () => {
   return (
-    <div className="pt-20">
+    <div className="">
       <Testimonials />
     </div>
   );

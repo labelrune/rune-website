@@ -22,7 +22,7 @@ const NavbarDisclaimer = () => {
     );
   };
   return (
-    <div className="bg-[#E0D3BD] w-full h-12 flex items-center justify-between px-28 py-1 overflow-hidden">
+    <div className="bg-[#E0D3BD] w-full h-12 flex items-center justify-between sm:px-28 px-10 sm:py-1 overflow-hidden">
       <GrPrevious className="text-black cursor-pointer" onClick={handlePrev} />
       <div
         key={currentIndex}

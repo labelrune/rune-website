@@ -2,18 +2,18 @@ import React from "react";
 
 const OurStory = () => {
   return (
-    <div className="py-20 flex flex-col gap-10 items-center">
-      <div className="w-[1300px]">
+    <div className="p-5 md:p-10 flex flex-col gap-10 items-center">
+      <div className="md:w-[1300px]">
         <img
           src="https://cdn.shopify.com/s/files/1/0590/4023/5564/files/crop.jpg?v=1666175336"
           alt="our-stroy"
-          className="object-cover w-full aspect-[1300/1095]"
+          className="object-cover w-full max-sm:h-[270px]  md:aspect-[1300/1095]"
         />
-        <div className="flex justify-between mt-5">
-          <div className="w-[50%] text-[30px] leading-[39px]">
+        <div className="flex max-sm:flex-col md:justify-between mt-5">
+          <div className="md:w-[50%] text-[30px] leading-[39px]">
             Made with love in India.
           </div>
-          <div className="flex flex-col gap-3 w-[50%] text-[16px] leading-[28px] text-black opacity-75">
+          <div className="flex flex-col gap-3 md:w-[50%] text-[16px] leading-[28px] text-black opacity-75">
             <div>
               I always wondered how my Dadi used to walk into a room full of
               ladies, wearing the most subtle garment from her limited wardrobe

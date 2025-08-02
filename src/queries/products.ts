@@ -4,6 +4,8 @@ import {
   getDoc,
   getDocs,
   DocumentReference,
+  query,
+  limit,
 } from "firebase/firestore";
 import { firestore } from "src/lib/firebase";
 import { FBCollection, FBCollectionGroup, FBProduct } from "src/types/common";
@@ -108,3 +110,47 @@ export const getProductsByCollectionGroup = async (
 
   return products;
 };
+
+/**
+ * Fetches a single product by its document ID.
+ * @param {string} productId - The document ID of the product to fetch.
+ * @returns {Promise<FBProduct | null>} The product data or null if not found.
+ */
+export const getProductById = async (
+  productId: string
+): Promise<FBProduct | null> => {
+  // 1. Create a reference to the specific document in the "products" collection
+  const productRef = doc(firestore, "products", productId);
+
+  // 2. Fetch the document
+  const productSnap = await getDoc(productRef);
+
+  // 3. Check if the document exists and return its data
+  if (productSnap.exists()) {
+    return { id: productSnap.id, ...productSnap.data() } as FBProduct;
+  } else {
+    // It's good practice to handle the case where the document is not found
+    console.warn(`Product with ID "${productId}" not found.`);
+    return null;
+  }
+};
+
+/**
+ * Fetches a limited number of products from the "products" collection.
+ * @returns {Promise<FBProduct[]>} An array containing a maximum of 4 products.
+ */
+export async function getLimitedProducts(): Promise<FBProduct[]> {
+  const productsRef = collection(firestore, "products");
+
+  // Create a query that gets the first 4 documents it finds
+  const q = query(productsRef, limit(4));
+
+  const querySnapshot = await getDocs(q);
+
+  const productsData: FBProduct[] = [];
+  querySnapshot.forEach((doc) => {
+    productsData.push({ id: doc.id, ...doc.data() } as FBProduct);
+  });
+
+  return productsData;
+}

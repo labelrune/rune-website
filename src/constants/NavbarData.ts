@@ -4,7 +4,7 @@ export const NavItems: NavbarType[] = [
   {
     id: "1",
     label: "New Arrivals",
-    href: "/",
+    href: "/collections/new-arrivals",
     isHighlighted: true,
     hasDropdown: false,
   },

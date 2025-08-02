@@ -2,30 +2,27 @@ import Link from "next/link";
 import React from "react";
 import { catalogueData } from "src/constants/CatalogueData";
 import { Catalogue } from "src/types/Catalogue";
+import { formatPrice } from "src/utils/common";
 
 const LabelsData = ({ catalouge }: { catalouge: number }) => {
+
   const filteredCatalogueData = catalogueData.filter(
     (item) => item.id === catalouge
   );
+
   const catalougeText =
     catalouge === Catalogue.Gulzaar
       ? "Gulzaar"
       : catalouge === Catalogue.SpringSummer
-      ? "Spring Summer"
-      : catalouge === Catalogue.FestiveStyles
-      ? "Festive Styles"
-      : catalouge === Catalogue.BloomAndBreeze
-      ? "Bloom and Breeze"
-      : catalouge === Catalogue.VelvetAndTissueEdit
-      ? "Velvet and Tissue Edit"
-      : "Bestsellers";
+        ? "Spring Summer"
+        : catalouge === Catalogue.FestiveStyles
+          ? "Festive Styles"
+          : catalouge === Catalogue.BloomAndBreeze
+            ? "Bloom and Breeze"
+            : catalouge === Catalogue.VelvetAndTissueEdit
+              ? "Velvet and Tissue Edit"
+              : "Bestsellers";
 
-  const formatPrice = (price: number) => {
-    return new Intl.NumberFormat("en-IN", {
-      style: "currency",
-      currency: "INR",
-    }).format(price);
-  };
   return (
     <div className="flex flex-col items-center justify-center gap-6 mt-20">
       <div className="flex flex-col items-center gap-1">

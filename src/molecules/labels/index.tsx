@@ -2,7 +2,7 @@ import React from "react";
 import LabelsData from "./LabelsData";
 import { Catalogue } from "src/types/Catalogue";
 
-const Lables = () => {
+const Labels = () => {
   const catalougeEnumsArray = Object.values(Catalogue).filter(
     (value) => typeof value === "number"
   );
@@ -15,4 +15,4 @@ const Lables = () => {
   );
 };
 
-export default Lables;
+export default Labels;

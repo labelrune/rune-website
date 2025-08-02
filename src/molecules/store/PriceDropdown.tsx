@@ -102,7 +102,7 @@ const PriceRangeFilter: React.FC<PriceRangeFilterProps> = ({
     <div
       ref={componentRef}
       className={`
-        absolute left-0 top-12 z-50 bg-white rounded-lg shadow-xl p-4 w-72 md:w-80 border border-gray-200
+        absolute left-0 top-12 max-md:-translate-x-[67.5%] z-50 bg-white rounded-lg shadow-xl p-4 w-72 md:w-80 border border-gray-200
         transition-all duration-300 ease-out
         ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'}
       `}

@@ -4,7 +4,7 @@ type FirebaseIDObject = { id: string };
 
 export type ProductItemData = {
     basePrice: number;
-    specifications: Record<"key" | "value", string>;
+    specification: Array<Record<"key" | "value", string>>;
     cutPrice: number;
     imageLinks: Record<string, string>;
     description: string;

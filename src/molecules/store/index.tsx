@@ -86,14 +86,16 @@ export default function StoreProducts({ products: tempProducts }: { products: FB
                     <img className="w-full h-full object-cover transition-transform hover:scale-105 duration-700" src={Object.values(imageLinks)[0]} />
                   </div>
                   <div className="hover:underline">{productName}</div>
-                  <div className="flex flex-row gap-2 text-lg">
-                    <span>MRP</span>
-                    <span className="relative max-md:hidden">
-                      <span>{cutPrice ? formatPrice(cutPrice) : ""}</span>
-                      <span className="absolute inset-0 m-auto w-full max-h-0.5 bg-black" />
-                    </span>
-                    <span>{basePrice ? formatPrice(basePrice) : ""}</span>
-                  </div>
+                  {(basePrice || cutPrice) && (
+                    <div className="flex flex-row gap-2 text-lg">
+                      <span>MRP</span>
+                      <span className="relative max-md:hidden">
+                        <span>{cutPrice ? formatPrice(cutPrice) : ""}</span>
+                        <span className="absolute inset-0 m-auto w-full max-h-0.5 bg-black" />
+                      </span>
+                      <span>{basePrice ? formatPrice(basePrice) : ""}</span>
+                    </div>
+                  )}
                 </Link>
               </React.Fragment>
             )

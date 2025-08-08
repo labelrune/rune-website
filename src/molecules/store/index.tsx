@@ -40,7 +40,7 @@ export default function StoreProducts({ products: tempProducts }: { products: FB
 
   const [stockSelection, setStockSelection] = useState<StockSelection>({ available: true, soldOut: false });
 
-  const highestPrice = Math.max(...products.map(product => product.basePrice));
+  const highestPrice = Math.max(...products.map(product => (product.basePrice ?? 0)));
 
   return (
     <>
@@ -83,16 +83,16 @@ export default function StoreProducts({ products: tempProducts }: { products: FB
               <React.Fragment key={id + idx}>
                 <Link href={`/product/${id}-${toKebabCase(productName)}`} className="w-[calc(100%/2-8px)] md:w-[calc(100%/3-15px)] h-fit flex flex-col gap-1 md:gap-2 cursor-pointer">
                   <div className="w-full aspect-[2/3] flex justify-center items-center overflow-hidden rounded-sm">
-                    <img className="w-full h-full object-cover transition-transform hover:scale-105 duration-700" src={imageLinks["0"]} />
+                    <img className="w-full h-full object-cover transition-transform hover:scale-105 duration-700" src={Object.values(imageLinks)[0]} />
                   </div>
                   <div className="hover:underline">{productName}</div>
                   <div className="flex flex-row gap-2 text-lg">
                     <span>MRP</span>
                     <span className="relative max-md:hidden">
-                      <span>{formatPrice(cutPrice)}</span>
+                      <span>{cutPrice ? formatPrice(cutPrice) : ""}</span>
                       <span className="absolute inset-0 m-auto w-full max-h-0.5 bg-black" />
                     </span>
-                    <span>{formatPrice(basePrice)}</span>
+                    <span>{basePrice ? formatPrice(basePrice) : ""}</span>
                   </div>
                 </Link>
               </React.Fragment>

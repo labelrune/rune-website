@@ -53,8 +53,12 @@ export default function ProductInfo({
         </div>
         <div className="max-md:flex-1 md:w-full flex flex-col justify-start gap-3">
           <div className="text-4xl">{productName}</div>
-          <div className="text-xl mt-4">MRP ₹ {basePrice.toLocaleString('en-IN', { minimumFractionDigits: 2 })}</div>
-          <div className="text-xl line-through">MRP ₹ {cutPrice.toLocaleString('en-IN', { minimumFractionDigits: 2 })}</div>
+          {basePrice && (
+            <div className="text-xl mt-4">MRP ₹ {basePrice.toLocaleString('en-IN', { minimumFractionDigits: 2 })}</div>
+          )}
+          {cutPrice && (
+            <div className="text-xl line-through">MRP ₹ {cutPrice.toLocaleString('en-IN', { minimumFractionDigits: 2 })}</div>
+          )}
           <div>Tax included. Shipping calculated at checkout.</div>
           <div className="flex flex-row justify-between w-full mt-4">
             <div>Size</div>
@@ -138,7 +142,7 @@ export default function ProductInfo({
                 <div className="group-hover:underline group-hover:underline-offset-4 capatilize cursor-pointer">
                   {productName}
                 </div>
-                <div>{`MRP ${formatPrice(basePrice)}`}</div>
+                {basePrice && <div>{`MRP ${formatPrice(basePrice)}`}</div>}
               </div>
             );
           })}

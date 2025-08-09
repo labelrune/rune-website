@@ -1,8 +1,15 @@
-import { Catalogue, CatalogueDataType } from "src/types/Catalogue";
+import { CatalogueEnum, CatalogueDataType } from "src/types/Catalogue";
+
+export const CatalogueLinks: Record<CatalogueEnum, string> = {
+  [CatalogueEnum.Anarkali]: "/collections/anarkali",
+  [CatalogueEnum.Kurta]: "/collections/kurta",
+  [CatalogueEnum.Dress]: "/collections/dress",
+  [CatalogueEnum.NewArrivals]: "/collections/new-arrivals"
+}
 
 export const catalogueData: CatalogueDataType[] = [
   {
-    id: Catalogue.FestiveStyles,
+    id: CatalogueEnum.Dress,
     title: "Starlight Crown",
     description: "Protects from dark magic.",
     imageUrl: [
@@ -14,7 +21,7 @@ export const catalogueData: CatalogueDataType[] = [
     isNewArrival: false,
   },
   {
-    id: Catalogue.Gulzaar,
+    id: CatalogueEnum.Anarkali,
     title: "Mystic Orb",
     description: "Shrouded in ancient mystery.",
     imageUrl: [
@@ -26,7 +33,7 @@ export const catalogueData: CatalogueDataType[] = [
     isNewArrival: false,
   },
   {
-    id: Catalogue.BloomAndBreeze,
+    id: CatalogueEnum.NewArrivals,
     title: "Sorcerer's Stone",
     description: "Crafted from celestial matter.",
     imageUrl: [
@@ -37,20 +44,20 @@ export const catalogueData: CatalogueDataType[] = [
     price: 22632,
     isNewArrival: true,
   },
+  // {
+  //   id: Catalogue.Bestsellers,
+  //   title: "Elder Wand",
+  //   description: "Passed down through generations.",
+  //   imageUrl: [
+  //     "http://1.bp.blogspot.com/-vtoGkVTLOkE/UvkUp83B3LI/AAAAAAAAP68/SJp1wiZ0tQw/s1600/sl1353.jpg",
+  //     "https://1.bp.blogspot.com/-E2iQhmOeUww/UuKhArPPjSI/AAAAAAABBf8/2OzJ2Wrj9SE/s1600/Simple-Salwar-Kameez-6+www.Clothing9.blogspot.com.jpg",
+  //   ],
+  //   link: "/products/elder-wand-3",
+  //   price: 3574,
+  //   isNewArrival: true,
+  // },
   {
-    id: Catalogue.Bestsellers,
-    title: "Elder Wand",
-    description: "Passed down through generations.",
-    imageUrl: [
-      "http://1.bp.blogspot.com/-vtoGkVTLOkE/UvkUp83B3LI/AAAAAAAAP68/SJp1wiZ0tQw/s1600/sl1353.jpg",
-      "https://1.bp.blogspot.com/-E2iQhmOeUww/UuKhArPPjSI/AAAAAAABBf8/2OzJ2Wrj9SE/s1600/Simple-Salwar-Kameez-6+www.Clothing9.blogspot.com.jpg",
-    ],
-    link: "/products/elder-wand-3",
-    price: 3574,
-    isNewArrival: true,
-  },
-  {
-    id: Catalogue.FestiveStyles,
+    id: CatalogueEnum.Dress,
     title: "Sorcerer's Stone",
     description: "Protects from dark magic.",
     imageUrl: [
@@ -62,7 +69,7 @@ export const catalogueData: CatalogueDataType[] = [
     isNewArrival: true,
   },
   {
-    id: Catalogue.SpringSummer,
+    id: CatalogueEnum.Kurta,
     title: "Starlight Crown",
     description: "Once belonged to a famous wizard.",
     imageUrl: [
@@ -73,32 +80,32 @@ export const catalogueData: CatalogueDataType[] = [
     price: 6360,
     isNewArrival: false,
   },
+  // {
+  //   id: Catalogue.Bestsellers,
+  //   title: "Moon Pendant",
+  //   description: "Crafted from celestial matter.",
+  //   imageUrl: [
+  //     "http://static1.squarespace.com/static/5c832b55af4683b3a857c8ef/t/60de7f8e0b09d9394918eb68/1625194382545/Designer+Salwar+Suit.jpeg?format=1500w",
+  //     "https://prathamwholesale.com/images/product/sub_images/2023/02/panghat-by-tulsi-fashion-special-summer-seasons-designer-salwar-kameez-catalogue-design-2023-2-2023-02-01_18_02_44.jpg",
+  //   ],
+  //   link: "/products/moon-pendant-6",
+  //   price: 24390,
+  //   isNewArrival: false,
+  // },
+  // {
+  //   id: Catalogue.Bestsellers,
+  //   title: "Elder Wand",
+  //   description: "Protects from dark magic.",
+  //   imageUrl: [
+  //     "https://cdn.sareeka.com/image/data2020/designer-salwar-kameez-resham-art-silk-in-navy-blue-151871.jpg",
+  //     "https://www.kollybollyethnics.com/image/catalog/data/03Feb2020/Purple-georgette-churidar-salwar-kameez-7087.jpg",
+  //   ],
+  //   link: "/products/elder-wand-7",
+  //   price: 13361,
+  //   isNewArrival: true,
+  // },
   {
-    id: Catalogue.Bestsellers,
-    title: "Moon Pendant",
-    description: "Crafted from celestial matter.",
-    imageUrl: [
-      "http://static1.squarespace.com/static/5c832b55af4683b3a857c8ef/t/60de7f8e0b09d9394918eb68/1625194382545/Designer+Salwar+Suit.jpeg?format=1500w",
-      "https://prathamwholesale.com/images/product/sub_images/2023/02/panghat-by-tulsi-fashion-special-summer-seasons-designer-salwar-kameez-catalogue-design-2023-2-2023-02-01_18_02_44.jpg",
-    ],
-    link: "/products/moon-pendant-6",
-    price: 24390,
-    isNewArrival: false,
-  },
-  {
-    id: Catalogue.Bestsellers,
-    title: "Elder Wand",
-    description: "Protects from dark magic.",
-    imageUrl: [
-      "https://cdn.sareeka.com/image/data2020/designer-salwar-kameez-resham-art-silk-in-navy-blue-151871.jpg",
-      "https://www.kollybollyethnics.com/image/catalog/data/03Feb2020/Purple-georgette-churidar-salwar-kameez-7087.jpg",
-    ],
-    link: "/products/elder-wand-7",
-    price: 13361,
-    isNewArrival: true,
-  },
-  {
-    id: Catalogue.FestiveStyles,
+    id: CatalogueEnum.Dress,
     title: "Vampire Fang",
     description: "An item of great power.",
     imageUrl: [
@@ -110,7 +117,7 @@ export const catalogueData: CatalogueDataType[] = [
     isNewArrival: false,
   },
   {
-    id: Catalogue.Gulzaar,
+    id: CatalogueEnum.Anarkali,
     title: "Moon Pendant",
     description: "Its glow captivates the soul.",
     imageUrl: [
@@ -122,7 +129,7 @@ export const catalogueData: CatalogueDataType[] = [
     isNewArrival: false,
   },
   {
-    id: Catalogue.Gulzaar,
+    id: CatalogueEnum.Anarkali,
     title: "Cursed Ring",
     description: "An item of great power.",
     imageUrl: [
@@ -133,20 +140,20 @@ export const catalogueData: CatalogueDataType[] = [
     price: 70058,
     isNewArrival: false,
   },
+  // {
+  //   id: Catalogue.VelvetAndTissueEdit,
+  //   title: "Invisible Cloak",
+  //   description: "Crafted from celestial matter.",
+  //   imageUrl: [
+  //     "https://cdn.sareeka.com/image/data2020/embroidered-salwar-kameez-158992.jpg",
+  //     "http://www.kollybollyethnics.com/image/catalog/data/31Aug2017/Sonal-chauhan-lavender-color-net-party-wear-anarkali-suit-4707.jpg",
+  //   ],
+  //   link: "/products/invisible-cloak-11",
+  //   price: 71026,
+  //   isNewArrival: false,
+  // },
   {
-    id: Catalogue.VelvetAndTissueEdit,
-    title: "Invisible Cloak",
-    description: "Crafted from celestial matter.",
-    imageUrl: [
-      "https://cdn.sareeka.com/image/data2020/embroidered-salwar-kameez-158992.jpg",
-      "http://www.kollybollyethnics.com/image/catalog/data/31Aug2017/Sonal-chauhan-lavender-color-net-party-wear-anarkali-suit-4707.jpg",
-    ],
-    link: "/products/invisible-cloak-11",
-    price: 71026,
-    isNewArrival: false,
-  },
-  {
-    id: Catalogue.Gulzaar,
+    id: CatalogueEnum.Anarkali,
     title: "Vampire Fang",
     description: "Once belonged to a famous wizard.",
     imageUrl: [
@@ -157,32 +164,32 @@ export const catalogueData: CatalogueDataType[] = [
     price: 37951,
     isNewArrival: false,
   },
+  // {
+  //   id: Catalogue.Bestsellers,
+  //   title: "Moon Pendant",
+  //   description: "Protects from dark magic.",
+  //   imageUrl: [
+  //     "https://images.wholesalesalwar.com/2023y/April/40134/Pink-Malmal-Festival-Wear-Hand-Work-Readymade-Salwar-Suit-SG2268.jpg",
+  //     "http://1.bp.blogspot.com/-jJoGNplECXE/UUMfVOOBE0I/AAAAAAABE6s/F01yevxb6k0/s1600/jacqueline-fernandez_Salwar_Suit_Photoshoot_004.jpg",
+  //   ],
+  //   link: "/products/moon-pendant-13",
+  //   price: 45202,
+  //   isNewArrival: true,
+  // },
+  // {
+  //   id: Catalogue.Bestsellers,
+  //   title: "Elder Wand",
+  //   description: "An item of great power.",
+  //   imageUrl: [
+  //     "https://cdn.sareeka.com/image/data2020/embroidered-salwar-kameez-158992.jpg",
+  //     "http://www.kollybollyethnics.com/image/catalog/data/31Aug2017/Sonal-chauhan-lavender-color-net-party-wear-anarkali-suit-4707.jpg",
+  //   ],
+  //   link: "/products/elder-wand-14",
+  //   price: 42663,
+  //   isNewArrival: true,
+  // },
   {
-    id: Catalogue.Bestsellers,
-    title: "Moon Pendant",
-    description: "Protects from dark magic.",
-    imageUrl: [
-      "https://images.wholesalesalwar.com/2023y/April/40134/Pink-Malmal-Festival-Wear-Hand-Work-Readymade-Salwar-Suit-SG2268.jpg",
-      "http://1.bp.blogspot.com/-jJoGNplECXE/UUMfVOOBE0I/AAAAAAABE6s/F01yevxb6k0/s1600/jacqueline-fernandez_Salwar_Suit_Photoshoot_004.jpg",
-    ],
-    link: "/products/moon-pendant-13",
-    price: 45202,
-    isNewArrival: true,
-  },
-  {
-    id: Catalogue.Bestsellers,
-    title: "Elder Wand",
-    description: "An item of great power.",
-    imageUrl: [
-      "https://cdn.sareeka.com/image/data2020/embroidered-salwar-kameez-158992.jpg",
-      "http://www.kollybollyethnics.com/image/catalog/data/31Aug2017/Sonal-chauhan-lavender-color-net-party-wear-anarkali-suit-4707.jpg",
-    ],
-    link: "/products/elder-wand-14",
-    price: 42663,
-    isNewArrival: true,
-  },
-  {
-    id: Catalogue.SpringSummer,
+    id: CatalogueEnum.Kurta,
     title: "Goblin Coin",
     description: "Protects from dark magic.",
     imageUrl: [
@@ -194,7 +201,7 @@ export const catalogueData: CatalogueDataType[] = [
     isNewArrival: true,
   },
   {
-    id: Catalogue.Gulzaar,
+    id: CatalogueEnum.Anarkali,
     title: "Mystic Orb",
     description: "Passed down through generations.",
     imageUrl: [
@@ -205,20 +212,20 @@ export const catalogueData: CatalogueDataType[] = [
     price: 15314,
     isNewArrival: false,
   },
+  // {
+  //   id: Catalogue.VelvetAndTissueEdit,
+  //   title: "Elder Wand",
+  //   description: "Brings luck to its holder.",
+  //   imageUrl: [
+  //     "http://static1.squarespace.com/static/5c832b55af4683b3a857c8ef/t/60de7f8e0b09d9394918eb68/1625194382545/Designer+Salwar+Suit.jpeg?format=1500w",
+  //     "https://prathamwholesale.com/images/product/sub_images/2023/02/panghat-by-tulsi-fashion-special-summer-seasons-designer-salwar-kameez-catalogue-design-2023-2-2023-02-01_18_02_44.jpg",
+  //   ],
+  //   link: "/products/elder-wand-17",
+  //   price: 10718,
+  //   isNewArrival: true,
+  // },
   {
-    id: Catalogue.VelvetAndTissueEdit,
-    title: "Elder Wand",
-    description: "Brings luck to its holder.",
-    imageUrl: [
-      "http://static1.squarespace.com/static/5c832b55af4683b3a857c8ef/t/60de7f8e0b09d9394918eb68/1625194382545/Designer+Salwar+Suit.jpeg?format=1500w",
-      "https://prathamwholesale.com/images/product/sub_images/2023/02/panghat-by-tulsi-fashion-special-summer-seasons-designer-salwar-kameez-catalogue-design-2023-2-2023-02-01_18_02_44.jpg",
-    ],
-    link: "/products/elder-wand-17",
-    price: 10718,
-    isNewArrival: true,
-  },
-  {
-    id: Catalogue.BloomAndBreeze,
+    id: CatalogueEnum.NewArrivals,
     title: "Invisible Cloak",
     description: "Infused with lunar essence.",
     imageUrl: [
@@ -229,32 +236,32 @@ export const catalogueData: CatalogueDataType[] = [
     price: 22682,
     isNewArrival: true,
   },
+  // {
+  //   id: Catalogue.VelvetAndTissueEdit,
+  //   title: "Mystic Orb",
+  //   description: "Crafted from celestial matter.",
+  //   imageUrl: [
+  //     "https://cdn.sareeka.com/image/data2020/embroidered-salwar-kameez-158992.jpg",
+  //     "http://www.kollybollyethnics.com/image/catalog/data/31Aug2017/Sonal-chauhan-lavender-color-net-party-wear-anarkali-suit-4707.jpg",
+  //   ],
+  //   link: "/products/mystic-orb-19",
+  //   price: 15324,
+  //   isNewArrival: true,
+  // },
+  // {
+  //   id: Catalogue.VelvetAndTissueEdit,
+  //   title: "Starlight Crown",
+  //   description: "Protects from dark magic.",
+  //   imageUrl: [
+  //     "https://cdn.sareeka.com/image/data2020/embroidered-salwar-kameez-158992.jpg",
+  //     "http://www.kollybollyethnics.com/image/catalog/data/31Aug2017/Sonal-chauhan-lavender-color-net-party-wear-anarkali-suit-4707.jpg",
+  //   ],
+  //   link: "/products/starlight-crown-20",
+  //   price: 28898,
+  //   isNewArrival: true,
+  // },
   {
-    id: Catalogue.VelvetAndTissueEdit,
-    title: "Mystic Orb",
-    description: "Crafted from celestial matter.",
-    imageUrl: [
-      "https://cdn.sareeka.com/image/data2020/embroidered-salwar-kameez-158992.jpg",
-      "http://www.kollybollyethnics.com/image/catalog/data/31Aug2017/Sonal-chauhan-lavender-color-net-party-wear-anarkali-suit-4707.jpg",
-    ],
-    link: "/products/mystic-orb-19",
-    price: 15324,
-    isNewArrival: true,
-  },
-  {
-    id: Catalogue.VelvetAndTissueEdit,
-    title: "Starlight Crown",
-    description: "Protects from dark magic.",
-    imageUrl: [
-      "https://cdn.sareeka.com/image/data2020/embroidered-salwar-kameez-158992.jpg",
-      "http://www.kollybollyethnics.com/image/catalog/data/31Aug2017/Sonal-chauhan-lavender-color-net-party-wear-anarkali-suit-4707.jpg",
-    ],
-    link: "/products/starlight-crown-20",
-    price: 28898,
-    isNewArrival: true,
-  },
-  {
-    id: Catalogue.Gulzaar,
+    id: CatalogueEnum.Anarkali,
     title: "Mystic Orb",
     description: "Infused with lunar essence.",
     imageUrl: [
@@ -266,7 +273,7 @@ export const catalogueData: CatalogueDataType[] = [
     isNewArrival: false,
   },
   {
-    id: Catalogue.FestiveStyles,
+    id: CatalogueEnum.Dress,
     title: "Witch's Broom",
     description: "Infused with lunar essence.",
     imageUrl: [
@@ -277,32 +284,32 @@ export const catalogueData: CatalogueDataType[] = [
     price: 18632,
     isNewArrival: false,
   },
+  // {
+  //   id: Catalogue.VelvetAndTissueEdit,
+  //   title: "Vampire Fang",
+  //   description: "Once belonged to a famous wizard.",
+  //   imageUrl: [
+  //     "http://static1.squarespace.com/static/5c832b55af4683b3a857c8ef/t/60de7f8e0b09d9394918eb68/1625194382545/Designer+Salwar+Suit.jpeg?format=1500w",
+  //     "https://prathamwholesale.com/images/product/sub_images/2023/02/panghat-by-tulsi-fashion-special-summer-seasons-designer-salwar-kameez-catalogue-design-2023-2-2023-02-01_18_02_44.jpg",
+  //   ],
+  //   link: "/products/vampire-fang-23",
+  //   price: 22610,
+  //   isNewArrival: false,
+  // },
+  // {
+  //   id: Catalogue.Bestsellers,
+  //   title: "Sorcerer's Stone",
+  //   description: "Its glow captivates the soul.",
+  //   imageUrl: [
+  //     "https://cdn.sareeka.com/image/data2020/embroidered-salwar-kameez-158992.jpg",
+  //     "http://www.kollybollyethnics.com/image/catalog/data/31Aug2017/Sonal-chauhan-lavender-color-net-party-wear-anarkali-suit-4707.jpg",
+  //   ],
+  //   link: "/products/sorcerer's-stone-24",
+  //   price: 40291,
+  //   isNewArrival: false,
+  // },
   {
-    id: Catalogue.VelvetAndTissueEdit,
-    title: "Vampire Fang",
-    description: "Once belonged to a famous wizard.",
-    imageUrl: [
-      "http://static1.squarespace.com/static/5c832b55af4683b3a857c8ef/t/60de7f8e0b09d9394918eb68/1625194382545/Designer+Salwar+Suit.jpeg?format=1500w",
-      "https://prathamwholesale.com/images/product/sub_images/2023/02/panghat-by-tulsi-fashion-special-summer-seasons-designer-salwar-kameez-catalogue-design-2023-2-2023-02-01_18_02_44.jpg",
-    ],
-    link: "/products/vampire-fang-23",
-    price: 22610,
-    isNewArrival: false,
-  },
-  {
-    id: Catalogue.Bestsellers,
-    title: "Sorcerer's Stone",
-    description: "Its glow captivates the soul.",
-    imageUrl: [
-      "https://cdn.sareeka.com/image/data2020/embroidered-salwar-kameez-158992.jpg",
-      "http://www.kollybollyethnics.com/image/catalog/data/31Aug2017/Sonal-chauhan-lavender-color-net-party-wear-anarkali-suit-4707.jpg",
-    ],
-    link: "/products/sorcerer's-stone-24",
-    price: 40291,
-    isNewArrival: false,
-  },
-  {
-    id: Catalogue.SpringSummer,
+    id: CatalogueEnum.Kurta,
     title: "Witch's Broom",
     description: "Shrouded in ancient mystery.",
     imageUrl: [
@@ -313,20 +320,20 @@ export const catalogueData: CatalogueDataType[] = [
     price: 16928,
     isNewArrival: false,
   },
+  // {
+  //   id: Catalogue.Bestsellers,
+  //   title: "Sorcerer's Stone",
+  //   description: "Passed down through generations.",
+  //   imageUrl: [
+  //     "https://images.wholesalesalwar.com/2023y/April/40134/Pink-Malmal-Festival-Wear-Hand-Work-Readymade-Salwar-Suit-SG2268.jpg",
+  //     "http://1.bp.blogspot.com/-jJoGNplECXE/UUMfVOOBE0I/AAAAAAABE6s/F01yevxb6k0/s1600/jacqueline-fernandez_Salwar_Suit_Photoshoot_004.jpg",
+  //   ],
+  //   link: "/products/sorcerer's-stone-26",
+  //   price: 64176,
+  //   isNewArrival: false,
+  // },
   {
-    id: Catalogue.Bestsellers,
-    title: "Sorcerer's Stone",
-    description: "Passed down through generations.",
-    imageUrl: [
-      "https://images.wholesalesalwar.com/2023y/April/40134/Pink-Malmal-Festival-Wear-Hand-Work-Readymade-Salwar-Suit-SG2268.jpg",
-      "http://1.bp.blogspot.com/-jJoGNplECXE/UUMfVOOBE0I/AAAAAAABE6s/F01yevxb6k0/s1600/jacqueline-fernandez_Salwar_Suit_Photoshoot_004.jpg",
-    ],
-    link: "/products/sorcerer's-stone-26",
-    price: 64176,
-    isNewArrival: false,
-  },
-  {
-    id: Catalogue.Gulzaar,
+    id: CatalogueEnum.Anarkali,
     title: "Mystic Orb",
     description: "Holds a secret only few know.",
     imageUrl: [
@@ -337,20 +344,20 @@ export const catalogueData: CatalogueDataType[] = [
     price: 4178,
     isNewArrival: false,
   },
+  // {
+  //   id: Catalogue.Bestsellers,
+  //   title: "Invisible Cloak",
+  //   description: "Infused with lunar essence.",
+  //   imageUrl: [
+  //     "https://royalanarkali.com/wp-content/uploads/2021/06/glorious-yellow-color-heavy-rayon-sequence-work-designer-salwar-suit-3-scaled.jpg",
+  //     "https://cdn2.thebridalbox.com/wp-content/uploads/2016/09/Jacket-Styled-salwar-styles.jpg",
+  //   ],
+  //   link: "/products/invisible-cloak-28",
+  //   price: 34867,
+  //   isNewArrival: true,
+  // },
   {
-    id: Catalogue.Bestsellers,
-    title: "Invisible Cloak",
-    description: "Infused with lunar essence.",
-    imageUrl: [
-      "https://royalanarkali.com/wp-content/uploads/2021/06/glorious-yellow-color-heavy-rayon-sequence-work-designer-salwar-suit-3-scaled.jpg",
-      "https://cdn2.thebridalbox.com/wp-content/uploads/2016/09/Jacket-Styled-salwar-styles.jpg",
-    ],
-    link: "/products/invisible-cloak-28",
-    price: 34867,
-    isNewArrival: true,
-  },
-  {
-    id: Catalogue.BloomAndBreeze,
+    id: CatalogueEnum.NewArrivals,
     title: "Invisible Cloak",
     description: "Infused with lunar essence.",
     imageUrl: [
@@ -361,20 +368,20 @@ export const catalogueData: CatalogueDataType[] = [
     price: 7647,
     isNewArrival: false,
   },
+  // {
+  //   id: Catalogue.VelvetAndTissueEdit,
+  //   title: "Mystic Orb",
+  //   description: "Its glow captivates the soul.",
+  //   imageUrl: [
+  //     "http://1.bp.blogspot.com/-vtoGkVTLOkE/UvkUp83B3LI/AAAAAAAAP68/SJp1wiZ0tQw/s1600/sl1353.jpg",
+  //     "https://1.bp.blogspot.com/-E2iQhmOeUww/UuKhArPPjSI/AAAAAAABBf8/2OzJ2Wrj9SE/s1600/Simple-Salwar-Kameez-6+www.Clothing9.blogspot.com.jpg",
+  //   ],
+  //   link: "/products/mystic-orb-30",
+  //   price: 28882,
+  //   isNewArrival: false,
+  // },
   {
-    id: Catalogue.VelvetAndTissueEdit,
-    title: "Mystic Orb",
-    description: "Its glow captivates the soul.",
-    imageUrl: [
-      "http://1.bp.blogspot.com/-vtoGkVTLOkE/UvkUp83B3LI/AAAAAAAAP68/SJp1wiZ0tQw/s1600/sl1353.jpg",
-      "https://1.bp.blogspot.com/-E2iQhmOeUww/UuKhArPPjSI/AAAAAAABBf8/2OzJ2Wrj9SE/s1600/Simple-Salwar-Kameez-6+www.Clothing9.blogspot.com.jpg",
-    ],
-    link: "/products/mystic-orb-30",
-    price: 28882,
-    isNewArrival: false,
-  },
-  {
-    id: Catalogue.Gulzaar,
+    id: CatalogueEnum.Anarkali,
     title: "Invisible Cloak",
     description: "Passed down through generations.",
     imageUrl: [
@@ -386,7 +393,7 @@ export const catalogueData: CatalogueDataType[] = [
     isNewArrival: false,
   },
   {
-    id: Catalogue.FestiveStyles,
+    id: CatalogueEnum.Dress,
     title: "Elder Wand",
     description: "Holds a secret only few know.",
     imageUrl: [
@@ -397,20 +404,20 @@ export const catalogueData: CatalogueDataType[] = [
     price: 44989,
     isNewArrival: false,
   },
+  // {
+  //   id: Catalogue.VelvetAndTissueEdit,
+  //   title: "Goblin Coin",
+  //   description: "Shrouded in ancient mystery.",
+  //   imageUrl: [
+  //     "https://cdn.sareeka.com/image/data2020/embroidered-salwar-kameez-158992.jpg",
+  //     "http://www.kollybollyethnics.com/image/catalog/data/31Aug2017/Sonal-chauhan-lavender-color-net-party-wear-anarkali-suit-4707.jpg",
+  //   ],
+  //   link: "/products/goblin-coin-33",
+  //   price: 65657,
+  //   isNewArrival: false,
+  // },
   {
-    id: Catalogue.VelvetAndTissueEdit,
-    title: "Goblin Coin",
-    description: "Shrouded in ancient mystery.",
-    imageUrl: [
-      "https://cdn.sareeka.com/image/data2020/embroidered-salwar-kameez-158992.jpg",
-      "http://www.kollybollyethnics.com/image/catalog/data/31Aug2017/Sonal-chauhan-lavender-color-net-party-wear-anarkali-suit-4707.jpg",
-    ],
-    link: "/products/goblin-coin-33",
-    price: 65657,
-    isNewArrival: false,
-  },
-  {
-    id: Catalogue.BloomAndBreeze,
+    id: CatalogueEnum.NewArrivals,
     title: "Cursed Ring",
     description: "An item of great power.",
     imageUrl: [
@@ -421,20 +428,20 @@ export const catalogueData: CatalogueDataType[] = [
     price: 71866,
     isNewArrival: true,
   },
+  // {
+  //   id: Catalogue.VelvetAndTissueEdit,
+  //   title: "Moon Pendant",
+  //   description: "Passed down through generations.",
+  //   imageUrl: [
+  //     "https://cdn.sareeka.com/image/data2020/embroidered-salwar-kameez-158992.jpg",
+  //     "http://www.kollybollyethnics.com/image/catalog/data/31Aug2017/Sonal-chauhan-lavender-color-net-party-wear-anarkali-suit-4707.jpg",
+  //   ],
+  //   link: "/products/moon-pendant-35",
+  //   price: 6803,
+  //   isNewArrival: false,
+  // },
   {
-    id: Catalogue.VelvetAndTissueEdit,
-    title: "Moon Pendant",
-    description: "Passed down through generations.",
-    imageUrl: [
-      "https://cdn.sareeka.com/image/data2020/embroidered-salwar-kameez-158992.jpg",
-      "http://www.kollybollyethnics.com/image/catalog/data/31Aug2017/Sonal-chauhan-lavender-color-net-party-wear-anarkali-suit-4707.jpg",
-    ],
-    link: "/products/moon-pendant-35",
-    price: 6803,
-    isNewArrival: false,
-  },
-  {
-    id: Catalogue.FestiveStyles,
+    id: CatalogueEnum.Dress,
     title: "Starlight Crown",
     description: "Its glow captivates the soul.",
     imageUrl: [
@@ -445,20 +452,20 @@ export const catalogueData: CatalogueDataType[] = [
     price: 72279,
     isNewArrival: false,
   },
+  // {
+  //   id: Catalogue.Bestsellers,
+  //   title: "Sorcerer's Stone",
+  //   description: "An item of great power.",
+  //   imageUrl: [
+  //     "https://royalanarkali.com/wp-content/uploads/2021/06/glorious-yellow-color-heavy-rayon-sequence-work-designer-salwar-suit-3-scaled.jpg",
+  //     "https://cdn2.thebridalbox.com/wp-content/uploads/2016/09/Jacket-Styled-salwar-styles.jpg",
+  //   ],
+  //   link: "/products/sorcerer's-stone-37",
+  //   price: 13575,
+  //   isNewArrival: false,
+  // },
   {
-    id: Catalogue.Bestsellers,
-    title: "Sorcerer's Stone",
-    description: "An item of great power.",
-    imageUrl: [
-      "https://royalanarkali.com/wp-content/uploads/2021/06/glorious-yellow-color-heavy-rayon-sequence-work-designer-salwar-suit-3-scaled.jpg",
-      "https://cdn2.thebridalbox.com/wp-content/uploads/2016/09/Jacket-Styled-salwar-styles.jpg",
-    ],
-    link: "/products/sorcerer's-stone-37",
-    price: 13575,
-    isNewArrival: false,
-  },
-  {
-    id: Catalogue.BloomAndBreeze,
+    id: CatalogueEnum.NewArrivals,
     title: "Goblin Coin",
     description: "Protects from dark magic.",
     imageUrl: [
@@ -470,7 +477,7 @@ export const catalogueData: CatalogueDataType[] = [
     isNewArrival: true,
   },
   {
-    id: Catalogue.Gulzaar,
+    id: CatalogueEnum.Anarkali,
     title: "Elder Wand",
     description: "Protects from dark magic.",
     imageUrl: [
@@ -482,7 +489,7 @@ export const catalogueData: CatalogueDataType[] = [
     isNewArrival: false,
   },
   {
-    id: Catalogue.Gulzaar,
+    id: CatalogueEnum.Anarkali,
     title: "Mystic Orb",
     description: "Shrouded in ancient mystery.",
     imageUrl: [
@@ -494,7 +501,7 @@ export const catalogueData: CatalogueDataType[] = [
     isNewArrival: true,
   },
   {
-    id: Catalogue.SpringSummer,
+    id: CatalogueEnum.Kurta,
     title: "Invisible Cloak",
     description: "Infused with lunar essence.",
     imageUrl: [
@@ -505,32 +512,32 @@ export const catalogueData: CatalogueDataType[] = [
     price: 46239,
     isNewArrival: false,
   },
+  // {
+  //   id: Catalogue.VelvetAndTissueEdit,
+  //   title: "Invisible Cloak",
+  //   description: "Holds a secret only few know.",
+  //   imageUrl: [
+  //     "http://1.bp.blogspot.com/-vtoGkVTLOkE/UvkUp83B3LI/AAAAAAAAP68/SJp1wiZ0tQw/s1600/sl1353.jpg",
+  //     "https://1.bp.blogspot.com/-E2iQhmOeUww/UuKhArPPjSI/AAAAAAABBf8/2OzJ2Wrj9SE/s1600/Simple-Salwar-Kameez-6+www.Clothing9.blogspot.com.jpg",
+  //   ],
+  //   link: "/products/invisible-cloak-42",
+  //   price: 45967,
+  //   isNewArrival: false,
+  // },
+  // {
+  //   id: Catalogue.VelvetAndTissueEdit,
+  //   title: "Mystic Orb",
+  //   description: "Passed down through generations.",
+  //   imageUrl: [
+  //     "https://cdn.sareeka.com/image/data2020/designer-salwar-kameez-resham-art-silk-in-navy-blue-151871.jpg",
+  //     "https://www.kollybollyethnics.com/image/catalog/data/03Feb2020/Purple-georgette-churidar-salwar-kameez-7087.jpg",
+  //   ],
+  //   link: "/products/mystic-orb-43",
+  //   price: 38081,
+  //   isNewArrival: false,
+  // },
   {
-    id: Catalogue.VelvetAndTissueEdit,
-    title: "Invisible Cloak",
-    description: "Holds a secret only few know.",
-    imageUrl: [
-      "http://1.bp.blogspot.com/-vtoGkVTLOkE/UvkUp83B3LI/AAAAAAAAP68/SJp1wiZ0tQw/s1600/sl1353.jpg",
-      "https://1.bp.blogspot.com/-E2iQhmOeUww/UuKhArPPjSI/AAAAAAABBf8/2OzJ2Wrj9SE/s1600/Simple-Salwar-Kameez-6+www.Clothing9.blogspot.com.jpg",
-    ],
-    link: "/products/invisible-cloak-42",
-    price: 45967,
-    isNewArrival: false,
-  },
-  {
-    id: Catalogue.VelvetAndTissueEdit,
-    title: "Mystic Orb",
-    description: "Passed down through generations.",
-    imageUrl: [
-      "https://cdn.sareeka.com/image/data2020/designer-salwar-kameez-resham-art-silk-in-navy-blue-151871.jpg",
-      "https://www.kollybollyethnics.com/image/catalog/data/03Feb2020/Purple-georgette-churidar-salwar-kameez-7087.jpg",
-    ],
-    link: "/products/mystic-orb-43",
-    price: 38081,
-    isNewArrival: false,
-  },
-  {
-    id: Catalogue.Gulzaar,
+    id: CatalogueEnum.Anarkali,
     title: "Cursed Ring",
     description: "Crafted from celestial matter.",
     imageUrl: [
@@ -542,7 +549,7 @@ export const catalogueData: CatalogueDataType[] = [
     isNewArrival: true,
   },
   {
-    id: Catalogue.SpringSummer,
+    id: CatalogueEnum.Kurta,
     title: "Goblin Coin",
     description: "Holds a secret only few know.",
     imageUrl: [
@@ -554,7 +561,7 @@ export const catalogueData: CatalogueDataType[] = [
     isNewArrival: true,
   },
   {
-    id: Catalogue.SpringSummer,
+    id: CatalogueEnum.Kurta,
     title: "Moon Pendant",
     description: "Holds a secret only few know.",
     imageUrl: [
@@ -566,7 +573,7 @@ export const catalogueData: CatalogueDataType[] = [
     isNewArrival: true,
   },
   {
-    id: Catalogue.BloomAndBreeze,
+    id: CatalogueEnum.NewArrivals,
     title: "Sorcerer's Stone",
     description: "Crafted from celestial matter.",
     imageUrl: [
@@ -578,7 +585,7 @@ export const catalogueData: CatalogueDataType[] = [
     isNewArrival: false,
   },
   {
-    id: Catalogue.BloomAndBreeze,
+    id: CatalogueEnum.NewArrivals,
     title: "Elder Wand",
     description: "Its glow captivates the soul.",
     imageUrl: [
@@ -589,20 +596,20 @@ export const catalogueData: CatalogueDataType[] = [
     price: 17727,
     isNewArrival: false,
   },
+  // {
+  //   id: Catalogue.VelvetAndTissueEdit,
+  //   title: "Invisible Cloak",
+  //   description: "Holds a secret only few know.",
+  //   imageUrl: [
+  //     "http://static1.squarespace.com/static/5c832b55af4683b3a857c8ef/t/60de7f8e0b09d9394918eb68/1625194382545/Designer+Salwar+Suit.jpeg?format=1500w",
+  //     "https://prathamwholesale.com/images/product/sub_images/2023/02/panghat-by-tulsi-fashion-special-summer-seasons-designer-salwar-kameez-catalogue-design-2023-2-2023-02-01_18_02_44.jpg",
+  //   ],
+  //   link: "/products/invisible-cloak-49",
+  //   price: 11470,
+  //   isNewArrival: false,
+  // },
   {
-    id: Catalogue.VelvetAndTissueEdit,
-    title: "Invisible Cloak",
-    description: "Holds a secret only few know.",
-    imageUrl: [
-      "http://static1.squarespace.com/static/5c832b55af4683b3a857c8ef/t/60de7f8e0b09d9394918eb68/1625194382545/Designer+Salwar+Suit.jpeg?format=1500w",
-      "https://prathamwholesale.com/images/product/sub_images/2023/02/panghat-by-tulsi-fashion-special-summer-seasons-designer-salwar-kameez-catalogue-design-2023-2-2023-02-01_18_02_44.jpg",
-    ],
-    link: "/products/invisible-cloak-49",
-    price: 11470,
-    isNewArrival: false,
-  },
-  {
-    id: Catalogue.FestiveStyles,
+    id: CatalogueEnum.Dress,
     title: "Elder Wand",
     description: "An item of great power.",
     imageUrl: [
@@ -614,7 +621,7 @@ export const catalogueData: CatalogueDataType[] = [
     isNewArrival: true,
   },
   {
-    id: Catalogue.Gulzaar,
+    id: CatalogueEnum.Anarkali,
     title: "Sorcerer's Stone",
     description: "Protects from dark magic.",
     imageUrl: [
@@ -626,7 +633,7 @@ export const catalogueData: CatalogueDataType[] = [
     isNewArrival: true,
   },
   {
-    id: Catalogue.FestiveStyles,
+    id: CatalogueEnum.Dress,
     title: "Elder Wand",
     description: "Its glow captivates the soul.",
     imageUrl: [
@@ -638,7 +645,7 @@ export const catalogueData: CatalogueDataType[] = [
     isNewArrival: false,
   },
   {
-    id: Catalogue.FestiveStyles,
+    id: CatalogueEnum.Dress,
     title: "Goblin Coin",
     description: "An item of great power.",
     imageUrl: [
@@ -649,32 +656,32 @@ export const catalogueData: CatalogueDataType[] = [
     price: 22633,
     isNewArrival: false,
   },
+  // {
+  //   id: Catalogue.VelvetAndTissueEdit,
+  //   title: "Goblin Coin",
+  //   description: "Brings luck to its holder.",
+  //   imageUrl: [
+  //     "http://1.bp.blogspot.com/-vtoGkVTLOkE/UvkUp83B3LI/AAAAAAAAP68/SJp1wiZ0tQw/s1600/sl1353.jpg",
+  //     "https://1.bp.blogspot.com/-E2iQhmOeUww/UuKhArPPjSI/AAAAAAABBf8/2OzJ2Wrj9SE/s1600/Simple-Salwar-Kameez-6+www.Clothing9.blogspot.com.jpg",
+  //   ],
+  //   link: "/products/goblin-coin-54",
+  //   price: 50476,
+  //   isNewArrival: false,
+  // },
+  // {
+  //   id: Catalogue.Bestsellers,
+  //   title: "Vampire Fang",
+  //   description: "Once belonged to a famous wizard.",
+  //   imageUrl: [
+  //     "http://1.bp.blogspot.com/-vtoGkVTLOkE/UvkUp83B3LI/AAAAAAAAP68/SJp1wiZ0tQw/s1600/sl1353.jpg",
+  //     "https://1.bp.blogspot.com/-E2iQhmOeUww/UuKhArPPjSI/AAAAAAABBf8/2OzJ2Wrj9SE/s1600/Simple-Salwar-Kameez-6+www.Clothing9.blogspot.com.jpg",
+  //   ],
+  //   link: "/products/vampire-fang-55",
+  //   price: 29506,
+  //   isNewArrival: false,
+  // },
   {
-    id: Catalogue.VelvetAndTissueEdit,
-    title: "Goblin Coin",
-    description: "Brings luck to its holder.",
-    imageUrl: [
-      "http://1.bp.blogspot.com/-vtoGkVTLOkE/UvkUp83B3LI/AAAAAAAAP68/SJp1wiZ0tQw/s1600/sl1353.jpg",
-      "https://1.bp.blogspot.com/-E2iQhmOeUww/UuKhArPPjSI/AAAAAAABBf8/2OzJ2Wrj9SE/s1600/Simple-Salwar-Kameez-6+www.Clothing9.blogspot.com.jpg",
-    ],
-    link: "/products/goblin-coin-54",
-    price: 50476,
-    isNewArrival: false,
-  },
-  {
-    id: Catalogue.Bestsellers,
-    title: "Vampire Fang",
-    description: "Once belonged to a famous wizard.",
-    imageUrl: [
-      "http://1.bp.blogspot.com/-vtoGkVTLOkE/UvkUp83B3LI/AAAAAAAAP68/SJp1wiZ0tQw/s1600/sl1353.jpg",
-      "https://1.bp.blogspot.com/-E2iQhmOeUww/UuKhArPPjSI/AAAAAAABBf8/2OzJ2Wrj9SE/s1600/Simple-Salwar-Kameez-6+www.Clothing9.blogspot.com.jpg",
-    ],
-    link: "/products/vampire-fang-55",
-    price: 29506,
-    isNewArrival: false,
-  },
-  {
-    id: Catalogue.FestiveStyles,
+    id: CatalogueEnum.Dress,
     title: "Moon Pendant",
     description: "Shrouded in ancient mystery.",
     imageUrl: [
@@ -686,7 +693,7 @@ export const catalogueData: CatalogueDataType[] = [
     isNewArrival: true,
   },
   {
-    id: Catalogue.FestiveStyles,
+    id: CatalogueEnum.Dress,
     title: "Mystic Orb",
     description: "Holds a secret only few know.",
     imageUrl: [
@@ -698,7 +705,7 @@ export const catalogueData: CatalogueDataType[] = [
     isNewArrival: true,
   },
   {
-    id: Catalogue.FestiveStyles,
+    id: CatalogueEnum.Dress,
     title: "Elder Wand",
     description: "Passed down through generations.",
     imageUrl: [
@@ -710,7 +717,7 @@ export const catalogueData: CatalogueDataType[] = [
     isNewArrival: true,
   },
   {
-    id: Catalogue.BloomAndBreeze,
+    id: CatalogueEnum.NewArrivals,
     title: "Elder Wand",
     description: "Protects from dark magic.",
     imageUrl: [

@@ -1,35 +1,35 @@
 import Link from "next/link";
 import React from "react";
-import { catalogueData } from "src/constants/CatalogueData";
-import { Catalogue } from "src/types/Catalogue";
+import { catalogueData, CatalogueLinks } from "src/constants/CatalogueData";
+import { CatalogueEnum } from "src/types/Catalogue";
 import { formatPrice } from "src/utils/common";
 
-const LabelsData = ({ catalouge }: { catalouge: number }) => {
+const LabelsData = ({ catalogue }: { catalogue: CatalogueEnum }) => {
 
   const filteredCatalogueData = catalogueData.filter(
-    (item) => item.id === catalouge
+    (item) => item.id === catalogue
   );
 
-  const catalougeText =
-    catalouge === Catalogue.Gulzaar
-      ? "Gulzaar"
-      : catalouge === Catalogue.SpringSummer
-        ? "Spring Summer"
-        : catalouge === Catalogue.FestiveStyles
-          ? "Festive Styles"
-          : catalouge === Catalogue.BloomAndBreeze
-            ? "Bloom and Breeze"
-            : catalouge === Catalogue.VelvetAndTissueEdit
-              ? "Velvet and Tissue Edit"
-              : "Bestsellers";
+  const catalogueText = catalogue;
+  // catalouge === Catalogue.Gulzaar
+  //   ? "Gulzaar"
+  //   : catalouge === Catalogue.SpringSummer
+  //     ? "Spring Summer"
+  //     : catalouge === Catalogue.FestiveStyles
+  //       ? "Festive Styles"
+  //       : catalouge === Catalogue.BloomAndBreeze
+  //         ? "Bloom and Breeze"
+  //         : catalouge === Catalogue.VelvetAndTissueEdit
+  //           ? "Velvet and Tissue Edit"
+  //           : "Bestsellers";
 
   return (
     <div className="flex flex-col items-center justify-center gap-6 mt-20">
       <div className="flex flex-col items-center gap-1">
-        <div className="text-3xl capitalize">{catalougeText}</div>
+        <div className="text-3xl capitalize">{catalogueText}</div>
         <Link
           className="underline underline-offset-4 text-[18px]"
-          href={`/${catalougeText}`}
+          href={CatalogueLinks[catalogue]}
         >
           View Collection
         </Link>
@@ -45,12 +45,12 @@ const LabelsData = ({ catalouge }: { catalouge: number }) => {
                 <img
                   src={item.imageUrl[0]}
                   alt={item.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-all duration-300 group-hover:opacity-0 group-hover:scale-x-105"
+                  className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:opacity-0 group-hover:scale-105"
                 />
                 <img
                   src={item.imageUrl[1]}
                   alt={item.title}
-                  className="absolute inset-0 w-full h-full object-cover opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:scale-x-105"
+                  className="absolute inset-0 w-full h-full object-cover opacity-0 transition-all duration-700 group-hover:opacity-100 group-hover:scale-105"
                 />
               </div>
               <div className="group-hover:underline group-hover:underline-offset-4 capatilize">

@@ -1,14 +1,14 @@
-export enum Catalogue {
-  Gulzaar,
-  SpringSummer,
-  FestiveStyles,
-  BloomAndBreeze,
-  VelvetAndTissueEdit,
-  Bestsellers,
+export enum CatalogueEnum {
+  Anarkali = "Anarkalis",
+  Kurta = "Kurtas",
+  Dress = "Dresses",
+  NewArrivals = "New Arrivals",
+  // VelvetAndTissueEdit,
+  // Bestsellers,
 }
 
 export type CatalogueDataType = {
-  id: Catalogue;
+  id: CatalogueEnum;
   title: string;
   description: string;
   imageUrl: string[];

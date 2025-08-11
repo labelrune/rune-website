@@ -4,14 +4,14 @@ import React, { useState } from "react";
 import { FBProduct } from "src/types/common";
 import { formatPrice } from "src/utils/common";
 
+const MaxQuantity = 9;
+
 export default function ProductInfo({
-  productData: product, associatedProducts: tempAssociatedProducts
+  productData: product, associatedProducts
 }: {
   productData: FBProduct,
   associatedProducts: FBProduct[]
 }) {
-
-  const associatedProducts = [...tempAssociatedProducts, ...tempAssociatedProducts, ...tempAssociatedProducts, ...tempAssociatedProducts];
 
   const imageLinks = Object.values(product.imageLinks);
 
@@ -59,11 +59,14 @@ export default function ProductInfo({
           {cutPrice && (
             <div className="text-xl line-through">MRP ₹ {cutPrice.toLocaleString('en-IN', { minimumFractionDigits: 2 })}</div>
           )}
-          <div>Tax included. Shipping calculated at checkout.</div>
-          <div className="flex flex-row justify-between w-full mt-4">
-            <div>Size</div>
-            <div className="font-semibold underline cursor-pointer">Size Chart</div>
-          </div>
+          {/* <div>Tax included. Shipping calculated at checkout.</div>
+          Instead, we will add a short description */}
+          {sizeOptions.length ? (
+            <div className="flex flex-row justify-between w-full mt-4">
+              <div>Size</div>
+              <div className="font-semibold underline cursor-pointer">Size Chart</div>
+            </div>
+          ) : null}
           <div className="flex flex-row flex-wrap gap-3">
             {
               sizeOptions.map(size => (
@@ -82,24 +85,24 @@ export default function ProductInfo({
           <div className="mt-4">Quantity</div>
           <div className="flex flex-row justify-around gap-8 border-black border px-6 py-3 text-xl w-fit">
             <div
-              className="cursor-pointer scale-x-150"
+              className={`scale-x-150 select-none ${quantity === 1 ? "text-gray-400 cursor-not-allowed" : "cursor-pointer"}`}
               onClick={() => setQuantity(x => Math.max(x - 1, 1))}
             >
               -
             </div>
             <div>{quantity}</div>
             <div
-              className="cursor-pointer"
-              onClick={() => setQuantity(x => x + 1)}
+              className={`select-none ${quantity === 9 ? "text-gray-400 cursor-not-allowed" : "cursor-pointer"}`}
+              onClick={() => setQuantity(x => Math.min(x + 1, MaxQuantity))}
             >
               +
             </div>
           </div>
-          <div className="flex justify-center items-center border-black border-2 py-4 cursor-pointer text-xl hover:border-4 hover:mt-3 hover:translate-y-0.5 mt-4">
+          {/* <div className="flex justify-center items-center border-black border-2 py-4 cursor-pointer text-xl hover:border-4 hover:mt-3 hover:translate-y-0.5 mt-4">
             Add to Cart
-          </div>
+          </div> */}
           <div className="flex justify-center items-center hover:text-white bg-[#E0D3BD] py-4 cursor-pointer text-xl mt-4">
-            Buy it now
+            Buy now
           </div>
           <div className="mt-4 text-lg text-balance">
             {description}

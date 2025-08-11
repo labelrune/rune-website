@@ -7,7 +7,7 @@ import PriceDropdown from "./PriceDropdown";
 import Availability from "./Availability";
 import { StockSelection } from "src/types/store";
 import Link from "next/link";
-import { formatPrice } from "src/utils/common";
+import { formatPrice, toKebabCase } from "src/utils/common";
 
 const SortByOptionsMap: Record<string, string> = {
   FEATURED: "Featured",
@@ -20,20 +20,9 @@ const SortByOptionsMap: Record<string, string> = {
   N2O: "Date, new to old",
 }
 
-function toKebabCase(input: string): string {
-  return input
-    .replace(/[^a-zA-Z0-9\s]/g, ' ')
-    .replace(/\s+/g, ' ')
-    .toLowerCase()
-    .replace(/\s/g, '-')
-    .trim();
-}
-
 const SortByOptions = Object.entries(SortByOptionsMap).map(([k, v]) => ({ value: k, label: v }));
 
-export default function StoreProducts({ products: tempProducts }: { products: FBProduct[] }) {
-
-  const products = [...tempProducts, ...tempProducts, ...tempProducts];
+export default function StoreProducts({ products }: { products: FBProduct[] }) {
 
   const [minPriceValue, setMinPriceValue] = useState('');
   const [maxPriceValue, setMaxPriceValue] = useState('');

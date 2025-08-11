@@ -1,12 +1,12 @@
 import Link from "next/link";
 import React from "react";
-import { catalogueData, CatalogueLinks } from "src/constants/CatalogueData";
+import { CatalogueData, CatalogueLinks } from "src/constants/CatalogueData";
 import { CatalogueEnum } from "src/types/Catalogue";
-import { formatPrice } from "src/utils/common";
+import { formatPrice, toKebabCase } from "src/utils/common";
 
 const LabelsData = ({ catalogue }: { catalogue: CatalogueEnum }) => {
 
-  const filteredCatalogueData = catalogueData.filter(
+  const filteredCatalogueData = CatalogueData.filter(
     (item) => item.id === catalogue
   );
 
@@ -37,11 +37,12 @@ const LabelsData = ({ catalogue }: { catalogue: CatalogueEnum }) => {
       <div className="flex w-full md:gap-[2%] gap-3 overflow-x-scroll snap-x snap-mandatory scroll-smooth scrollbar-hide">
         {filteredCatalogueData.map((item, index) => {
           return (
-            <div
+            <Link
               className="snap-center flex flex-col gap-2 md:gap-3 group"
               key={index}
+              href={`${item.link}-${toKebabCase(item.title)}`}
             >
-              <div className="md:w-[357px] w-[311.3px] md:aspect-[357/618] h-[530px] relative cursor-pointer rounded-sm">
+              <div className="md:w-[357px] w-[311.3px] md:aspect-[357/618] h-[530px] relative cursor-pointer rounded-sm overflow-hidden">
                 <img
                   src={item.imageUrl[0]}
                   alt={item.title}
@@ -57,7 +58,7 @@ const LabelsData = ({ catalogue }: { catalogue: CatalogueEnum }) => {
                 {item.title}
               </div>
               <div>{`MRP ${formatPrice(item.price)}`}</div>
-            </div>
+            </Link>
           );
         })}
       </div>

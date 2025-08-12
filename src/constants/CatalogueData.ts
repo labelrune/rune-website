@@ -7,7 +7,7 @@ export const CatalogueLinks: Record<CatalogueEnum, string> = {
   [CatalogueEnum.NewArrivals]: "/collections/new-arrivals"
 }
 
-export const catalogueData: CatalogueDataType[] = [
+export const CatalogueData: CatalogueDataType[] = [
   {
     id: CatalogueEnum.Dress,
     title: "Nyah",

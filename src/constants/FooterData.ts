@@ -20,4 +20,9 @@ export const footerData: FooterData = {
       { label: "Contact", href: "/contact" },
     ],
   },
+  socials: [
+    { icon: "FaInstagram", href: "https://instagram.com/rune" },
+    { icon: "FaFacebook", href: "https://facebook.com/rune" },
+    { icon: "FaTwitter", href: "https://twitter.com/rune" },
+  ],
 };

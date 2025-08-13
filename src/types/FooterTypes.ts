@@ -11,4 +11,5 @@ export type FooterSection = {
 export type FooterData = {
   quickLinks: FooterSection;
   info: FooterSection;
+  socials: { icon: string; href: string }[];
 };

@@ -7,7 +7,7 @@ import { footerData } from "src/constants/FooterData";
 
 export const Footer = () => {
   return (
-    <footer className="bg-white text-black px-6 py-12 md:px-16 border-t-2 border-gray-100">
+    <footer className="w-full max-w-7xl mx-auto bg-white text-black px-6 py-12 border-t-2 border-gray-100">
       <div className="grid grid-cols-1 md:grid-cols-4 max-sm:gap-10 mb-10">
         <div className="flex justify-center md:justify-start">
           <Link

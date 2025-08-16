@@ -4,7 +4,7 @@ import { getLimitedProducts, getProductById } from "src/queries/products";
 export default async function Page({
   params,
 }: {
-  params: Promise<{ pidstr: string }>
+  params: Promise<{ pidstr: string }>;
 }) {
   const { pidstr } = await params;
 
@@ -14,13 +14,18 @@ export default async function Page({
 
   const associatedProducts = await getLimitedProducts();
 
+  console.log("Product Data:", productData);
+
   if (!productData || !associatedProducts) return;
 
   return (
     <div className="flex w-screen justify-center p-4 max-w-screen overflow-x-hidden">
       <div className="max-w-7xl w-full self-center mt-8">
-        <ProductInfo productData={productData} associatedProducts={associatedProducts} />
+        <ProductInfo
+          productData={productData}
+          associatedProducts={associatedProducts}
+        />
       </div>
     </div>
-  )
+  );
 }

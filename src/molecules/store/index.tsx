@@ -68,7 +68,7 @@ export default function StoreProducts({ products }: { products: FBProduct[] }) {
         {
           products.map((product, idx) => {
             const { id, productName, imageLinks } = product;
-            const { grossPrice, netPrice } = product.sizes[0];
+            const { grossPrice, netPrice } = Object.values(product.sizes)[0];
             return (
               <React.Fragment key={id + idx}>
                 <Link href={`/product/${id}-${toKebabCase(productName)}`} className="w-[calc(100%/2-8px)] md:w-[calc(100%/3-15px)] h-fit flex flex-col gap-1 md:gap-2 cursor-pointer">

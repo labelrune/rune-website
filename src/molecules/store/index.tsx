@@ -106,7 +106,7 @@ export default function StoreProducts({ products }: { products: FBProduct[] }) {
           <div>{products.length} products</div>
         </div>
       </div>
-      <div className="w-full flex flex-wrap pt-4 gap-4 md:gap-5 justify-between mt-4">
+      <div className="w-full flex flex-wrap pt-4 gap-4 md:gap-5 justify-start mt-4">
         {
           sortedProducts.map((product, idx) => {
             const { id, productName, imageLinks } = product;

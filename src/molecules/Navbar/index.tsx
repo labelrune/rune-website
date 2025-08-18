@@ -3,14 +3,7 @@
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import NavbarDisclaimer from "./NavbarDisclaimer";
-import {
-  FiSearch,
-  FiUser,
-  FiShoppingBag,
-  FiChevronDown,
-  FiX,
-  FiMenu,
-} from "react-icons/fi";
+import { FiUser, FiChevronDown, FiX, FiMenu } from "react-icons/fi";
 import { NavItems } from "src/constants/NavbarData";
 import { useRouter } from "next/navigation";
 
@@ -39,7 +32,7 @@ const Navbar = () => {
   return (
     <>
       <div ref={navRef} className="fixed top-0 left-0 w-full z-50">
-        <NavbarDisclaimer />
+        {/* <NavbarDisclaimer /> */}
 
         <nav className="w-full border-b border-gray-200 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -81,16 +74,18 @@ const Navbar = () => {
                             router.push(item.href);
                           }
                         }}
-                        className={`flex items-center gap-1 text-sm ${item.isHighlighted
+                        className={`flex items-center gap-1 text-sm ${
+                          item.isHighlighted
                             ? "text-red-500"
                             : "text-gray-800 hover:text-gray-600"
-                          } hover:underline hover:underline-offset-4`}
+                        } hover:underline hover:underline-offset-4`}
                       >
                         {item.label}
                         {item.hasDropdown && (
                           <FiChevronDown
-                            className={`text-lg transition-transform ${isOpen ? "rotate-180" : ""
-                              }`}
+                            className={`text-lg transition-transform ${
+                              isOpen ? "rotate-180" : ""
+                            }`}
                           />
                         )}
                       </div>
@@ -130,8 +125,9 @@ const Navbar = () => {
           </div>
 
           <div
-            className={`fixed top-0 left-0 h-full w-3/4 max-w-xs bg-white shadow-lg transform transition-transform duration-300 z-40 ${mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-              } md:hidden`}
+            className={`fixed top-0 left-0 h-full w-3/4 max-w-xs bg-white shadow-lg transform transition-transform duration-300 z-40 ${
+              mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+            } md:hidden`}
           >
             <div className="p-6 space-y-4">
               {NavItems.map((item) => {
@@ -144,20 +140,24 @@ const Navbar = () => {
                         <button
                           className="flex justify-between items-center w-full text-left text-lg text-gray-800"
                           onClick={() =>
-                            setExpandedMobileDropdown(isExpanded ? null : item.id)
+                            setExpandedMobileDropdown(
+                              isExpanded ? null : item.id
+                            )
                           }
                         >
                           <span
-                            className={`${item.isHighlighted
+                            className={`${
+                              item.isHighlighted
                                 ? "text-red-500"
                                 : "text-gray-800"
-                              }`}
+                            }`}
                           >
                             {item.label}
                           </span>
                           <FiChevronDown
-                            className={`transition-transform duration-300 ${isExpanded ? "rotate-180" : ""
-                              }`}
+                            className={`transition-transform duration-300 ${
+                              isExpanded ? "rotate-180" : ""
+                            }`}
                           />
                         </button>
                         {isExpanded && (
@@ -181,8 +181,9 @@ const Navbar = () => {
                     ) : (
                       <Link
                         href={item.href}
-                        className={`block text-lg ${item.isHighlighted ? "text-red-500" : "text-gray-800"
-                          }`}
+                        className={`block text-lg ${
+                          item.isHighlighted ? "text-red-500" : "text-gray-800"
+                        }`}
                         onClick={() => {
                           setOpenDropdown(null);
                           setMobileMenuOpen(false);

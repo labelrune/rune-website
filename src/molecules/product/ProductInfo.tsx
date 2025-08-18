@@ -40,6 +40,16 @@ export default function ProductInfo({
   const [showChart, setShowChart] = useState(false);
   const [showCm, setShowCm] = useState(false);
 
+  const handleBuyNow = (rawLink: string) => {
+    if (typeof window === "undefined") return;
+
+    try {
+      const url = new URL(rawLink);
+      window.open(url.toString(), "_blank", "noopener,noreferrer");
+    } catch {
+      console.error("Invalid payment link:", rawLink);
+    }
+  };
   return (
     <>
       {
@@ -285,7 +295,7 @@ export default function ProductInfo({
           {/* <div className="flex justify-center items-center border-black border-2 py-4 cursor-pointer text-xl hover:border-4 hover:mt-3 hover:translate-y-0.5 mt-4">
             Add to Cart
           </div> */}
-          <div className="flex justify-center items-center hover:text-white bg-[#E0D3BD] py-4 cursor-pointer text-xl mt-4">
+          <div onClick={() => handleBuyNow(selectedSize.paymentLink)} className="flex justify-center items-center hover:text-white bg-[#E0D3BD] py-4 cursor-pointer text-xl mt-4">
             Buy now
           </div>
           <div className="mt-4 text-lg text-balance">{description}</div>

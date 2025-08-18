@@ -1,10 +1,8 @@
 export enum CatalogueEnum {
-  Anarkali = "Anarkalis",
-  Kurta = "Kurtas",
-  Dress = "Dresses",
-  NewArrivals = "New Arrivals",
-  // VelvetAndTissueEdit,
-  // Bestsellers,
+  Anarkali = "anarkali",
+  Kurta = "kurta",
+  Dress = "dress",
+  NewArrivals = "new-arrivals",
 }
 
 export type CatalogueDataType = {

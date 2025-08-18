@@ -1,23 +1,20 @@
 "use client"
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-
-interface DropdownItem {
-  value: string;
-  label: string;
-}
+import { DropdownItem } from 'src/types/store';
 
 interface DropdownProps {
   items: DropdownItem[];
   defaultLabel: string;
   onSelect: (selectedItem: DropdownItem) => void;
+  selectedItem: DropdownItem | null;
+  setSelectedItem: (x: DropdownItem | null) => void;
   preselectFirst?: boolean;
   className?: string;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ items, defaultLabel, onSelect, preselectFirst = false, className = '' }) => {
+const Dropdown: React.FC<DropdownProps> = ({ items, selectedItem, setSelectedItem, defaultLabel, onSelect, preselectFirst = false, className = '' }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [selectedItem, setSelectedItem] = useState<DropdownItem | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [minListWidth, setMinListWidth] = useState<string>('auto');
 

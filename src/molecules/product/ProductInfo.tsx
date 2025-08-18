@@ -4,6 +4,9 @@ import React, { useState } from "react";
 import { FBProduct, SizeChart } from "src/types/common";
 import { formatPrice } from "src/utils/common";
 import ProductAccordion from "../common/ProductAccordian";
+import { Carousel } from "react-responsive-carousel";
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const MaxQuantity = 9;
 
@@ -37,12 +40,51 @@ export default function ProductInfo({
     <>
       <div className="w-full flex flex-col md:flex-row gap-5 md:gap-16 items-start">
         <div className="max-md:flex-1 md:w-full flex flex-col">
-          <div className="w-full aspect-[2/3]">
-            <img
-              src={imageLinks[imageIndex]}
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <Carousel
+            autoPlay
+            axis="horizontal"
+            infiniteLoop
+            interval={2500}
+            transitionTime={1000}
+            className="w-full aspect-[2/3] flex flex-row justify-center items-center"
+            showIndicators={false}
+            showThumbs={false}
+            selectedItem={imageIndex}
+            onChange={setImageIndex}
+            showArrows
+            renderArrowPrev={(onClickHandler, hasPrev, label) =>
+              hasPrev && (
+                <button
+                  onClick={onClickHandler}
+                  title={label}
+                  className="absolute left-4 top-1/2 cursor-pointer -translate-y-1/2 bg-black/60 text-white p-2 rounded-full z-10 hover:bg-black/80"
+                >
+                  <FiChevronLeft className="w-6 h-6" />
+                </button>
+              )
+            }
+            renderArrowNext={(onClickHandler, hasNext, label) =>
+              hasNext && (
+                <button
+                  onClick={onClickHandler}
+                  title={label}
+                  className="absolute right-4 top-1/2 cursor-pointer -translate-y-1/2 bg-black/60 text-white p-2 rounded-full z-10 hover:bg-black/80"
+                >
+                  <FiChevronRight className="w-6 h-6" />
+                </button>
+              )
+            }
+          >
+            {
+              imageLinks.map(link => (
+                <img
+                  key={link}
+                  src={link}
+                  className="aspect-[2/3] bg-red-300 h-full"
+                />
+              ))
+            }
+          </Carousel>
           <div className="mt-2 flex flex-row gap-1.5">
             {imageLinks.map((imageLink, idx) => {
               const isSelectedImage = idx === imageIndex;
@@ -100,22 +142,20 @@ export default function ProductInfo({
           <div className="mt-4">Quantity</div>
           <div className="flex flex-row justify-around gap-8 border-black border px-6 py-3 text-xl w-fit">
             <div
-              className={`scale-x-150 select-none ${
-                quantity === 1
-                  ? "text-gray-400 cursor-not-allowed"
-                  : "cursor-pointer"
-              }`}
+              className={`scale-x-150 select-none ${quantity === 1
+                ? "text-gray-400 cursor-not-allowed"
+                : "cursor-pointer"
+                }`}
               onClick={() => setQuantity((x) => Math.max(x - 1, 1))}
             >
               -
             </div>
             <div>{quantity}</div>
             <div
-              className={`select-none ${
-                quantity === 9
-                  ? "text-gray-400 cursor-not-allowed"
-                  : "cursor-pointer"
-              }`}
+              className={`select-none ${quantity === 9
+                ? "text-gray-400 cursor-not-allowed"
+                : "cursor-pointer"
+                }`}
               onClick={() => setQuantity((x) => Math.min(x + 1, MaxQuantity))}
             >
               +

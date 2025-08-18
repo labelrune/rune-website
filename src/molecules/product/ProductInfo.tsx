@@ -7,6 +7,7 @@ import ProductAccordion from "../common/ProductAccordian";
 import { Carousel } from "react-responsive-carousel";
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { createPortal } from "react-dom";
 
 const MaxQuantity = 9;
 
@@ -36,8 +37,128 @@ export default function ProductInfo({
 
   const [imageIndex, setImageIndex] = useState(0);
 
+  const [showChart, setShowChart] = useState(false);
+  const [showCm, setShowCm] = useState(false);
+
   return (
     <>
+      {
+        showChart ? createPortal(
+          <div
+            className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center"
+            onClick={() => setShowChart(false)}
+          >
+            <div
+              className="bg-white p-6 rounded shadow-lg max-w-full w-[95vw] md:w-[900px] max-h-[90vh] overflow-y-auto relative"
+              onClick={e => e.stopPropagation()}
+            >
+              <div className="absolute top-4 left-4 flex items-center gap-2">
+                <span className="text-xs font-semibold mr-1">in</span>
+                <button
+                  type="button"
+                  className={`cursor-pointer w-12 h-6 flex items-center rounded-full transition-colors duration-300 focus:outline-none ${showCm ? "bg-gray-300" : "bg-black/80"}`}
+                  onClick={() => setShowCm((prev) => !prev)}
+                  aria-label="Toggle cm/in"
+                >
+                  <span
+                    className={`w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-300 ${showCm ? "translate-x-6" : "translate-x-1"}`}
+                  />
+                </button>
+                <span className="text-xs font-semibold ml-1">cm</span>
+              </div>
+              <button
+                className="cursor-pointer absolute top-4 right-4 text-2xl font-bold text-gray-500 hover:text-black"
+                onClick={() => setShowChart(false)}
+                aria-label="Close"
+              >
+                ×
+              </button>
+              <div className="mt-12">
+                <div className="text-xl font-bold mb-2">
+                  SIZE CHART &#123;Top/Kurti/Tunic/Dresses&#125;
+                </div>
+                <div className="mb-4 text-sm text-gray-600">
+                  Below Measurement is Body Measurement Size ({showCm ? "cm" : "in"})
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="min-w-full border border-gray-300 text-center text-sm">
+                    <thead>
+                      <tr className="bg-gray-100">
+                        <th className="border px-2 py-1"> </th>
+                        <th className="border px-2 py-1">XS</th>
+                        <th className="border px-2 py-1">S</th>
+                        <th className="border px-2 py-1">M</th>
+                        <th className="border px-2 py-1">L</th>
+                        <th className="border px-2 py-1">XL</th>
+                        <th className="border px-2 py-1">XXL</th>
+                        <th className="border px-2 py-1">3XL</th>
+                        <th className="border px-2 py-1">4XL</th>
+                        <th className="border px-2 py-1">5XL</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[
+                        { label: "Bust", in: [32, 34, 36, 38, 40, 42, 44, 46, 48], cm: [81.3, 86.4, 91.4, 96.5, 101.6, 106.7, 111.8, 116.8, 121.9] },
+                        { label: "Waist", in: [25, 27, 29, 31, 33, 35, 37, 39, 41], cm: [63.5, 68.6, 73.7, 78.7, 83.8, 88.9, 94.0, 99.1, 104.1] },
+                        { label: "Hip", in: [36, 38, 40, 42, 44, 46, 48, 50, 52], cm: [91.4, 96.5, 101.6, 106.7, 111.8, 116.8, 121.9, 127.0, 132.1] },
+                        { label: "Shoulder", in: [13.5, 14, 14.5, 15, 15.5, 16, 16.5, 17, 17.5], cm: [34.3, 35.6, 36.8, 38.1, 39.4, 40.6, 41.9, 43.2, 44.5] },
+                        { label: "Length", in: [26, 26, 26, 26, 26, 26, 26, 26, 26], cm: [66.0, 66.0, 66.0, 66.0, 66.0, 66.0, 66.0, 66.0, 66.0] },
+                        { label: "Armhole", in: [17.5, 18, 18.5, 19, 19.5, 20, 20.5, 21, 21.5], cm: [44.5, 45.7, 47.0, 48.3, 49.5, 50.8, 52.1, 53.3, 54.6] },
+                      ].map(row => (
+                        <tr key={row.label}>
+                          <td className="border px-2 py-1 font-semibold">{row.label}</td>
+                          {(showCm ? row.cm : row.in).map((val, i) => (
+                            <td className="border px-2 py-1" key={i}>{val}</td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="text-xl font-bold mt-8 mb-2">
+                  SIZE CHART &#123;Pants/Shorts&#125;
+                </div>
+                <div className="mb-4 text-sm text-gray-600">
+                  Below Measurement is Body Measurement Size ({showCm ? "cm" : "in"})
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="min-w-full border border-gray-300 text-center text-sm">
+                    <thead>
+                      <tr className="bg-gray-100">
+                        <th className="border px-2 py-1"> </th>
+                        <th className="border px-2 py-1">XS</th>
+                        <th className="border px-2 py-1">S</th>
+                        <th className="border px-2 py-1">M</th>
+                        <th className="border px-2 py-1">L</th>
+                        <th className="border px-2 py-1">XL</th>
+                        <th className="border px-2 py-1">XXL</th>
+                        <th className="border px-2 py-1">3XL</th>
+                        <th className="border px-2 py-1">4XL</th>
+                        <th className="border px-2 py-1">5XL</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[
+                        { label: "Length", in: [37, 37, 37, 37, 37, 37, 37, 37, 37], cm: [94.0, 94.0, 94.0, 94.0, 94.0, 94.0, 94.0, 94.0, 94.0] },
+                        { label: "Waist", in: [25, 27, 29, 31, 33, 35, 37, 39, 41], cm: [63.5, 68.6, 73.7, 78.7, 83.8, 88.9, 94.0, 99.1, 104.1] },
+                        { label: "Hip", in: [36, 38, 40, 42, 44, 46, 48, 50, 52], cm: [91.4, 96.5, 101.6, 106.7, 111.8, 116.8, 121.9, 127.0, 132.1] },
+                      ].map(row => (
+                        <tr key={row.label}>
+                          <td className="border px-2 py-1 font-semibold">{row.label}</td>
+                          {(showCm ? row.cm : row.in).map((val, i) => (
+                            <td className="border px-2 py-1" key={i}>{val}</td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>,
+          document.body
+        ) : null
+      }
       <div className="w-full flex flex-col md:flex-row gap-5 md:gap-16 items-start">
         <div className="max-md:flex-1 md:w-full flex flex-col">
           <Carousel
@@ -119,7 +240,7 @@ export default function ProductInfo({
           {Object.keys(sizeOptions).length ? (
             <div className="flex flex-row justify-between w-full mt-4">
               <div>Size</div>
-              <div className="font-semibold underline cursor-pointer">
+              <div onClick={() => setShowChart(true)} className="font-semibold underline cursor-pointer">
                 Size Chart
               </div>
             </div>

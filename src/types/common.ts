@@ -11,6 +11,8 @@ export type ProductItemData = {
   sizes: Record<string, { netPrice: string; grossPrice: string }>;
 };
 
+export type FBProduct = ProductItemData & FirebaseIDObject;
+
 export enum SizeChart {
   XS = "XS",
   S = "S",
@@ -20,8 +22,6 @@ export enum SizeChart {
   XXL = "XXL",
   XXXL = "XXXL",
 }
-
-export type FBProduct = ProductItemData & FirebaseIDObject;
 
 export type CollectionItemData = {
   name: string;

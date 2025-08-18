@@ -29,7 +29,7 @@ export default function StoreProducts({ products }: { products: FBProduct[] }) {
 
   const [stockSelection, setStockSelection] = useState<StockSelection>({ available: true, soldOut: false });
 
-  const highestPrice = Math.max(...products.map(product => (product.basePrice ?? 0)));
+  const highestPrice = Math.max(...products.map(product => (Number(product.sizes[0]?.netPrice) ?? 0)));
 
   return (
     <>
@@ -67,7 +67,8 @@ export default function StoreProducts({ products }: { products: FBProduct[] }) {
       <div className="w-full flex flex-wrap pt-4 gap-4 md:gap-5 justify-between mt-4">
         {
           products.map((product, idx) => {
-            const { id, productName, imageLinks, basePrice, cutPrice } = product;
+            const { id, productName, imageLinks } = product;
+            const { grossPrice, netPrice } = product.sizes[0];
             return (
               <React.Fragment key={id + idx}>
                 <Link href={`/product/${id}-${toKebabCase(productName)}`} className="w-[calc(100%/2-8px)] md:w-[calc(100%/3-15px)] h-fit flex flex-col gap-1 md:gap-2 cursor-pointer">
@@ -75,14 +76,14 @@ export default function StoreProducts({ products }: { products: FBProduct[] }) {
                     <img className="w-full h-full object-cover transition-transform hover:scale-105 duration-700" src={Object.values(imageLinks)[0]} />
                   </div>
                   <div className="hover:underline">{productName}</div>
-                  {(basePrice || cutPrice) && (
+                  {(netPrice || grossPrice) && (
                     <div className="flex flex-row gap-2 text-lg">
                       <span>MRP</span>
                       <span className="relative max-md:hidden">
-                        <span>{cutPrice ? formatPrice(cutPrice) : ""}</span>
+                        <span>{grossPrice ? formatPrice(grossPrice) : ""}</span>
                         <span className="absolute inset-0 m-auto w-full max-h-0.5 bg-black" />
                       </span>
-                      <span>{basePrice ? formatPrice(basePrice) : ""}</span>
+                      <span>{netPrice ? formatPrice(netPrice) : ""}</span>
                     </div>
                   )}
                 </Link>

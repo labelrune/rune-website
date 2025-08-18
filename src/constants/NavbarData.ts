@@ -14,7 +14,7 @@ export const NavItems: NavbarType[] = [
     href: "#",
     hasDropdown: true,
     dropdownItems: [
-      { label: "Shop All", href: "/collections/new-arrivals" },
+      { label: "Shop All", href: "/collections/all" },
       { label: "Kurtas", href: "/collections/kurta" },
       { label: "Anarkalis", href: "/collections/anarkali" },
       { label: "Dresses", href: "/collections/dress" },

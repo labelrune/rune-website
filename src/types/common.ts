@@ -8,7 +8,7 @@ export type ProductItemData = {
   description: string;
   productName: string;
   category: string;
-  sizes: Record<string, { netPrice: string; grossPrice: string }>;
+  sizes: Record<string, { netPrice: string; grossPrice: string, paymentLink: string }>;
 };
 
 export type FBProduct = ProductItemData & FirebaseIDObject;

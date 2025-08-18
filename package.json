@@ -9,8 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "formik": "^2.4.6",
+    "@cashfreepayments/cashfree-js": "^1.0.5",
     "firebase": "^12.0.0",
+    "formik": "^2.4.6",
     "next": "15.4.4",
     "react": "19.1.0",
     "react-dom": "19.1.0",

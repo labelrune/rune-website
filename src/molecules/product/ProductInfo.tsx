@@ -298,7 +298,7 @@ export default function ProductInfo({
           <div onClick={() => handleBuyNow(selectedSize.paymentLink)} className="flex transition-all rounded-md justify-center items-center text-[#FDF7ED] hover:opacity-90 bg-[#293035] py-4 cursor-pointer text-xl mt-8">
             BUY NOW
           </div>
-          <div className="mt-8 text-lg">{description}</div>
+          <div className="mt-8 text-lg whitespace-pre-wrap">{description}</div>
           {specification.map(({ key, value }) => (
             <div className="flex flex-row mt-2 text-xl" key={key}>
               <div className="font-semibold">{key}</div>

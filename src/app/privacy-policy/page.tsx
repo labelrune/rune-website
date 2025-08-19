@@ -173,9 +173,9 @@ const policyData: PolicyData = {
       heading: "10. Contact Us",
       bullets: [
         "For privacy-related questions or requests, please contact:",
-        "Email: support@labelrune.com",
-        "Phone: +91-XXXXXXXXXX",
-        "Address: Your Company Address"
+        "Email: reachus@labelrune.com",
+        "Phone: +91-9008255433",
+        "Address: 213, 1st Main Rd, 7th Block, Koramangala, Bengaluru, Karnataka 560030"
       ]
     }
   ]

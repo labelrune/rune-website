@@ -5,7 +5,7 @@ export const NavItems: NavbarType[] = [
     id: "1",
     label: "New Arrivals",
     href: "/collections/new-arrivals",
-    isHighlighted: true,
+    isHighlighted: false,
     hasDropdown: false,
   },
   {
@@ -23,13 +23,9 @@ export const NavItems: NavbarType[] = [
   // { id: "3", label: "Bestsellers", href: "#", hasDropdown: false },
   {
     id: "4",
-    label: "The Brand",
-    href: "#",
-    hasDropdown: true,
-    dropdownItems: [
-      { label: "Our Story", href: "/our-story" },
-      { label: "Our Tribe", href: "/our-tribe" },
-    ],
+    label: "About Brand",
+    href: "/our-story",
+    hasDropdown: false,
   },
   { id: "5", label: "Contact", href: "/contact", hasDropdown: false },
 ];

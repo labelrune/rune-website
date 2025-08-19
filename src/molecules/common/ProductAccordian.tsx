@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { CgColorBucket } from "react-icons/cg";
 import { FaTruck } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa6";
+import { GiReturnArrow } from "react-icons/gi";
 import { IoChevronDownSharp } from "react-icons/io5";
 import { AccordionItem } from "src/types/common";
 
@@ -23,13 +25,42 @@ const accordionData: AccordionItem[] = [
   },
   {
     id: 2,
-    title: "Care Instructions",
+    title: "General Care Instructions",
     content: (
-      <div className="space-y-1 text-gray-700">
-        <p>Hand wash in cold water. Do not bleach. Dry in shade.</p>
-      </div>
+      <ul className="space-y-1 text-gray-700">
+        <li>• Dry Clean or Hand Wash Separately in Cold Water</li>
+        <li>• Dry in Shade, Upside Down</li>
+        <li>• Wash Whites Separately</li>
+        <li>• Natural Colours May Bleed - Always Wash Separately</li>
+      </ul>
     ),
     icon: <FaRegHeart className="text-xl" />,
+  },
+  {
+    id: 3,
+    title: "Color & Craft Notice",
+    content: (
+      <div className="space-y-1 text-gray-700">
+        <p>Colors may vary slightly due to screen settings. Minor irregularities in embroidery, color, or print are natural and part of the product's handcrafted charm.</p>
+      </div>
+    ),
+    icon: <CgColorBucket className="text-xl" />,
+  },
+  {
+    id: 4,
+    title: "Exchanges & Returns",
+    content: (
+      <ul className="space-y-1 text-gray-700">
+        <li>• Minor irregularities in colour, texture, or weave are natural and not defects.</li>
+        <li>• No returns; size exchanges accepted on unworn, unwashed items.</li>
+        <li>• Returns are eligible for store credit only; refunds apply only to unfulfilled orders.</li>
+        <li>• Report damaged items within 48 hours with proof.</li>
+        <li>• Email reachus@labelrune.com with your order number for exchanges. Response within 5 working days.</li>
+        <li>• No exchanges or returns on custom-made, international, or sale items.</li>
+        <li>• Ship exchanges with a note including your name and return address.</li>
+      </ul>
+    ),
+    icon: <GiReturnArrow className="text-xl" />,
   },
 ];
 
@@ -53,18 +84,16 @@ export default function ProductAccordion() {
               <span className="font-semibold">{item.title}</span>
             </div>
             <IoChevronDownSharp
-              className={`text-lg transition-transform duration-300 ${
-                openId === item.id ? "rotate-180" : ""
-              }`}
+              className={`text-lg transition-transform duration-300 ${openId === item.id ? "rotate-180" : ""
+                }`}
             />
           </button>
 
           <div
-            className={`overflow-hidden transition-all duration-300 ${
-              openId === item.id
-                ? "max-h-96 opacity-100 p-2 md:p-4"
-                : "max-h-0 opacity-0"
-            }`}
+            className={`overflow-hidden transition-all duration-300 ${openId === item.id
+              ? "max-h-96 opacity-100 p-2 md:p-4"
+              : "max-h-0 opacity-0"
+              }`}
           >
             {openId === item.id && item.content}
           </div>

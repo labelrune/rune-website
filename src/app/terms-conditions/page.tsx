@@ -127,44 +127,35 @@ const defaultTermsData: TermsData = {
       ]
     },
     {
-      heading: "6. Returns and Refunds",
-      bullets: [
-        "Returns/exchanges are accepted only for defective, damaged, or incorrect items.",
-        "Requests must be raised within 7 days of receiving the order.",
-        "Items must be unused, unwashed, and returned with original tags/packaging.",
-        "Refunds (if approved) will be processed within 7–10 working days to the original payment method."
-      ]
-    },
-    {
-      heading: "7. Intellectual Property",
+      heading: "6. Intellectual Property",
       bullets: [
         "All text, images, designs, and content are owned by or licensed to Label Rune.",
         "Unauthorized use, reproduction, or distribution is strictly prohibited."
       ]
     },
     {
-      heading: "8. User Responsibilities",
+      heading: "7. User Responsibilities",
       bullets: [
         "You agree not to engage in fraudulent activity, abuse, or misuse of the Platform.",
         "We reserve the right to suspend or terminate accounts for violations."
       ]
     },
     {
-      heading: "9. Limitation of Liability",
+      heading: "8. Limitation of Liability",
       bullets: [
         "We are not liable for indirect, incidental, or consequential damages.",
         "Our liability is limited to the price paid for the product purchased."
       ]
     },
     {
-      heading: "10. Governing Law and Jurisdiction",
+      heading: "9. Governing Law and Jurisdiction",
       bullets: [
         "These Terms are governed by the laws of India.",
         "Any disputes shall be subject to the courts of [Your City, State]."
       ]
     },
     {
-      heading: "11. Amendments",
+      heading: "10. Amendments",
       bullets: [
         "We may revise these Terms at any time. Updates will be effective upon posting on the Platform."
       ]

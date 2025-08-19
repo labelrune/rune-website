@@ -46,20 +46,18 @@ export const ContactForm = () => {
       <div className="w-[50%]">
         <div className="text-4xl font-serif mb-4">Get in touch.</div>
         <div className="mb-8 text-gray-700 text-[16px] max-w-[400px]">
-          Please feel free to contact us. We’ll help you resolve questions as
-          soon as possible.
+          Reach out to us anytime. We’re here to answer your questions promptly.
         </div>
         <div className="flex-1 space-y-4">
           <p className="text-[16px]">
-            <span className="font-bold">Phone:</span> +91 8882269335
+            <span className="font-bold">Phone:</span> +91 9008255433
           </p>
           <p className="text-[16px]">
-            <span className="font-bold">Email:</span>{" "}
-            labelshreyasharma@gmail.com
+            <span className="font-bold">Email:</span> reachus@labelrune.com
           </p>
           <p className="text-[16px]">
-            <span className="font-bold">Address:</span> 663/22, PRAJAPATI
-            MOHALLA TUGLAKABAD, New Delhi, South East Delhi – 110044
+            <span className="font-bold">Address:</span> 213, 1st Main Rd, 7th
+            Block, Koramangala, Bengaluru, Karnataka 560030
           </p>
         </div>
       </div>

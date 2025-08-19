@@ -89,7 +89,7 @@ export const ContactForm = () => {
               <input
                 name="email"
                 type="email"
-                placeholder="Email *"
+                placeholder="Email"
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.email}

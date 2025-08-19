@@ -4,9 +4,10 @@ export const footerData: FooterData = {
   quickLinks: {
     title: "Quick links",
     links: [
-      { label: "Co-ord Sets", href: "/co-ord-sets" },
-      { label: "Kurta Sets", href: "/kurta-sets" },
-      { label: "Shop", href: "/shop" },
+      { label: "Shop All", href: "/collections/all" },
+      { label: "Kurtas", href: "/collections/kurta" },
+      { label: "Anarkalis", href: "/collections/anarkali" },
+      { label: "Dresses", href: "/collections/dress" },
     ],
   },
   info: {
@@ -21,8 +22,8 @@ export const footerData: FooterData = {
     ],
   },
   socials: [
-    { icon: "FaInstagram", href: "https://instagram.com/rune" },
-    { icon: "FaFacebook", href: "https://facebook.com/rune" },
-    { icon: "FaTwitter", href: "https://twitter.com/rune" },
+    { icon: "FaInstagram", href: "https://instagram.com/label_rune" },
+    { icon: "FaFacebook", href: "#" },
+    { icon: "FaTwitter", href: "#" },
   ],
 };

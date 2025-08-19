@@ -172,7 +172,8 @@ const defaultTermsData: TermsData = {
   ]
 };
 
-const TermsAndCondition: React.FC<{ terms?: TermsData }> = ({ terms = defaultTermsData }) => {
+const TermsAndCondition = () => {
+  const terms = defaultTermsData;
   return (
     <div className="flex flex-col gap-4 px-4 py-8 md:px-16 mx-auto">
       <div className="flex flex-col gap-1.5">

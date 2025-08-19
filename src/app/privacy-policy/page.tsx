@@ -99,7 +99,7 @@ type PolicyData = {
   contact?: ContactInfo;
 };
 
-const defaultPolicyData: PolicyData = {
+const policyData: PolicyData = {
   title: "Privacy Policy",
   effectiveDate: "Effective Date: August 19, 2025",
   intro: [
@@ -181,7 +181,8 @@ const defaultPolicyData: PolicyData = {
   ]
 };
 
-const PrivacyPolicy: React.FC<{ policy?: PolicyData }> = ({ policy = defaultPolicyData }) => {
+const PrivacyPolicy = () => {
+  const policy = policyData;
   return (
     <div className="flex flex-col gap-4 px-4 py-8 md:px-16 mx-auto">
       <div className="flex flex-col gap-1.5">

@@ -20,7 +20,7 @@ export const NavItems: NavbarType[] = [
       { label: "Dresses", href: "/collections/dress" },
     ],
   },
-  { id: "3", label: "Bestsellers", href: "#", hasDropdown: false },
+  // { id: "3", label: "Bestsellers", href: "#", hasDropdown: false },
   {
     id: "4",
     label: "The Brand",

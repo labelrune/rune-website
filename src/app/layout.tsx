@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "src/molecules/Navbar";
 import { Footer } from "src/molecules/footer";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +33,13 @@ export default function RootLayout({
         <Navbar />
         <div className="pt-20">{children}</div>
         <Footer />
+        <Link
+          href="https://wa.me/+919008255433?text=Hey!"
+          target="_blank"
+          className="fixed bottom-16 right-16 animate-pulse hover:animate-none w-16 aspect-square"
+        >
+          <img src="/whatsapp.svg" className="w-full h-full object-cover" />
+        </Link>
       </body>
     </html>
   );

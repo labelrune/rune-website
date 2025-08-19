@@ -248,14 +248,15 @@ export default function ProductInfo({
           {/* <div>Tax included. Shipping calculated at checkout.</div>
           Instead, we will add a short description */}
           {Object.keys(sizeOptions).length ? (
-            <div className="flex flex-row justify-between w-full mt-4">
-              <div>Size</div>
+            <div className="flex flex-row justify-between items-center w-full mt-4">
+              {/* <div>Size</div> */}
+              <div className="">*No hidden charges. Select your size at checkout.</div>
               <div onClick={() => setShowChart(true)} className="font-semibold underline cursor-pointer">
                 Size Chart
               </div>
             </div>
           ) : null}
-          <div className="flex flex-row flex-wrap gap-3">
+          {/* <div className="flex flex-row flex-wrap gap-3">
             {Object.keys(sizeOptions).map((size) => (
               <div
                 key={size}
@@ -269,8 +270,8 @@ export default function ProductInfo({
                 {size}
               </div>
             ))}
-          </div>
-          <div className="mt-4">Quantity</div>
+          </div> */}
+          {/* <div className="mt-4">Quantity</div>
           <div className="flex flex-row justify-around gap-8 border-black border px-6 py-3 text-xl w-fit">
             <div
               className={`scale-x-150 select-none ${quantity === 1
@@ -291,16 +292,16 @@ export default function ProductInfo({
             >
               +
             </div>
-          </div>
+          </div> */}
           {/* <div className="flex justify-center items-center border-black border-2 py-4 cursor-pointer text-xl hover:border-4 hover:mt-3 hover:translate-y-0.5 mt-4">
             Add to Cart
           </div> */}
-          <div onClick={() => handleBuyNow(selectedSize.paymentLink)} className="flex justify-center items-center hover:text-white bg-[#E0D3BD] py-4 cursor-pointer text-xl mt-4">
-            Buy now
+          <div onClick={() => handleBuyNow(selectedSize.paymentLink)} className="flex transition-all justify-center items-center hover:text-amber-800 bg-[#E0D3BD] py-4 cursor-pointer text-xl mt-8">
+            BUY NOW
           </div>
-          <div className="mt-4 text-lg text-balance">{description}</div>
+          <div className="mt-8 text-lg text-balance">{description}</div>
           {specification.map(({ key, value }) => (
-            <div className="flex flex-row mt-1 text-xl" key={key}>
+            <div className="flex flex-row mt-2 text-xl" key={key}>
               <div className="font-semibold">{key}</div>
               <div className="uppercase">: {value}</div>
             </div>

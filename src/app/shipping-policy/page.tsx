@@ -17,10 +17,10 @@ const ShippingPolicy = () => {
           Shipping address change has to be notified to us within 24 hours of
           placing the order by sending us an email on{" "}
           <a
-            href="mailto:labelshreyasharma@gmail.com"
+            href="mailto:reachus@labelrune.com"
             className="text-blue-600 underline"
           >
-            labelshreyasharma@gmail.com
+            reachus@labelrune.com
           </a>{" "}
           with the order number.
         </li>

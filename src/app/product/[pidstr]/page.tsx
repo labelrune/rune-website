@@ -18,12 +18,16 @@ export default async function Page({
 
   if (!productData || !associatedProducts) return;
 
+  const filteredAssociatedProducts = associatedProducts.filter(
+    (p) => p.id !== pid
+  ).slice(0, 4);
+
   return (
     <div className="flex w-screen justify-center p-4 max-w-screen overflow-x-hidden">
       <div className="max-w-7xl w-full self-center mt-8">
         <ProductInfo
           productData={productData}
-          associatedProducts={associatedProducts}
+          associatedProducts={filteredAssociatedProducts}
         />
       </div>
     </div>

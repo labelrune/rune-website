@@ -143,7 +143,7 @@ export async function getLimitedProducts(): Promise<FBProduct[]> {
   const productsRef = collection(firestore, "products");
 
   // Create a query that gets the first 4 documents it finds
-  const q = query(productsRef, limit(4));
+  const q = query(productsRef, limit(5));
 
   const querySnapshot = await getDocs(q);
 

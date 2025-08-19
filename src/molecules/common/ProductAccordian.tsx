@@ -41,12 +41,12 @@ export default function ProductAccordion() {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto border-t border-gray-200">
+    <div className="w-full max-w-2xl mt-8 mx-auto border-t border-gray-200">
       {accordionData.map((item) => (
         <div key={item.id} className="border-b border-gray-200">
           <button
             onClick={() => toggleAccordion(item.id)}
-            className="w-full flex justify-between items-center py-4 px-2 md:px-4"
+            className="w-full flex justify-between items-center py-4 px-2 md:px-4 cursor-pointer"
           >
             <div className="flex items-center gap-2 text-left">
               {item.icon}

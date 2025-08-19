@@ -296,7 +296,7 @@ export default function ProductInfo({
           {/* <div className="flex justify-center items-center border-black border-2 py-4 cursor-pointer text-xl hover:border-4 hover:mt-3 hover:translate-y-0.5 mt-4">
             Add to Cart
           </div> */}
-          <div onClick={() => handleBuyNow(selectedSize.paymentLink)} className="flex transition-all justify-center items-center hover:text-amber-800 bg-[#E0D3BD] py-4 cursor-pointer text-xl mt-8">
+          <div onClick={() => handleBuyNow(selectedSize.paymentLink)} className="flex transition-all rounded-md justify-center items-center text-[#FDF7ED] hover:opacity-90 bg-[#293035] py-4 cursor-pointer text-xl mt-8">
             BUY NOW
           </div>
           <div className="mt-8 text-lg text-balance">{description}</div>

@@ -178,12 +178,7 @@ const defaultPolicyData: PolicyData = {
         "Address: Your Company Address"
       ]
     }
-  ],
-  contact: {
-    email: "support@labelrune.com",
-    phone: "+91-XXXXXXXXXX",
-    address: "Your Company Address"
-  }
+  ]
 };
 
 const PrivacyPolicy: React.FC<{ policy?: PolicyData }> = ({ policy = defaultPolicyData }) => {
@@ -228,15 +223,6 @@ const PrivacyPolicy: React.FC<{ policy?: PolicyData }> = ({ policy = defaultPoli
           )}
         </div>
       ))}
-
-      {policy.contact && (
-        <div className="flex flex-col gap-1.5">
-          <div className="font-semibold text-[16px] md:text-[18px]">Contact Us</div>
-          <div className="text-[13px] md:text-[16px] text-gray-800">Email: {policy.contact.email}</div>
-          <div className="text-[13px] md:text-[16px] text-gray-800">Phone: {policy.contact.phone}</div>
-          <div className="text-[13px] md:text-[16px] text-gray-800">Address: {policy.contact.address}</div>
-        </div>
-      )}
     </div>
   );
 };

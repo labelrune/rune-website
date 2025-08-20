@@ -382,7 +382,7 @@ export default function ProductInfo({
           >
             BUY NOW
           </div>
-          <div className="mt-8 text-lg">{description}</div>
+          <div className="mt-8 text-lg whitespace-pre-wrap">{description}</div>
           {specification.map(({ key, value }) => (
             <div className="flex flex-row mt-2 text-xl" key={key}>
               <div className="font-semibold">{key}</div>

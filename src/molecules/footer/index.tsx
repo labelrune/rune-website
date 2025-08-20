@@ -54,7 +54,7 @@ export const Footer = () => {
               const Icon = require("react-icons/fa")[social.icon];
               return (
                 <a
-                  key={social.href}
+                  key={social.icon}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"

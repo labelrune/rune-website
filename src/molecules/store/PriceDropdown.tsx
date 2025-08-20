@@ -98,11 +98,13 @@ const PriceRangeFilter: React.FC<PriceRangeFilterProps> = ({
     return null;
   }
 
+  // use max-md:-translate-x-[67.5%] if required when other stuff is shown in the same row
+
   return (
     <div
       ref={componentRef}
       className={`
-        absolute left-0 top-12 max-md:-translate-x-[67.5%] z-50 bg-white rounded-lg shadow-xl p-4 w-72 md:w-80 border border-gray-200
+        absolute left-0 top-12 z-50 bg-white rounded-lg shadow-xl p-4 w-72 md:w-80 border border-gray-200
         transition-all duration-300 ease-out
         ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'}
       `}
@@ -135,7 +137,7 @@ const PriceRangeFilter: React.FC<PriceRangeFilterProps> = ({
 
         <div className="relative flex-1">
 
-          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-lg">$</span>
+          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-lg">₹</span>
           <input
             id="minPrice"
             type="number"
@@ -164,7 +166,7 @@ const PriceRangeFilter: React.FC<PriceRangeFilterProps> = ({
 
         <div className="relative flex-1">
 
-          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-lg">$</span>
+          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-lg">₹</span>
           <input
             id="maxPrice"
             type="number"

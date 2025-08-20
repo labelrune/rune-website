@@ -64,18 +64,35 @@ export default function StoreProducts({ products }: { products: FBProduct[] }) {
     if (!sortBy) return products;
 
     const sortFn = SortingFunctions[sortBy.value as SortByEnum];
-    return [...products].sort(sortFn);
-  }, [products, sortBy]);
+
+    let productsWithinRange = products;
+
+    if (minPriceValue) {
+      productsWithinRange = productsWithinRange.filter(product => {
+        const productPrice = Number(Object.values(product.sizes)[0].netPrice);
+        return productPrice >= Number(minPriceValue);
+      });
+    }
+
+    if (maxPriceValue) {
+      productsWithinRange = productsWithinRange.filter(product => {
+        const productPrice = Number(Object.values(product.sizes)[0].netPrice);
+        return productPrice <= Number(maxPriceValue);
+      });
+    }
+
+    return [...productsWithinRange].sort(sortFn);
+  }, [products, sortBy, minPriceValue, maxPriceValue]);
 
   // const [stockSelection, setStockSelection] = useState<StockSelection>({ available: true, soldOut: false });
 
-  const highestPrice = Math.max(...products.map(product => (Number(product.sizes[0]?.netPrice) ?? 0)));
+  const highestPrice = Math.max(...products.map(product => (Number(Object.values(product.sizes)[0].netPrice) ?? 0)));
 
   return (
     <>
       <div className="mt-8 w-full flex flex-col md:flex-row max-md:gap-4 items-center justify-between">
-        {/* <div className="w-full flex flex-row gap-5 max-md:justify-between items-center">
-          <div className="flex flex-row gap-5">
+        <div className="w-full flex flex-row gap-5 max-md:justify-between items-center">
+          {/* <div className="flex flex-row gap-5">
             <div>Filter:</div>
             <Availability
               stockSelection={stockSelection}
@@ -83,16 +100,16 @@ export default function StoreProducts({ products }: { products: FBProduct[] }) {
               totalSoldOutCount={0}
               totalAvailableCount={products.length}
             />
-          </div>
+          </div> */}
           <div className="flex flex-row gap-5">
             <PriceDropdown
               minPriceValue={minPriceValue}
               setMaxPriceValue={setMaxPriceValue}
-              maxPriceValue={highestPrice.toString()}
+              maxPriceValue={maxPriceValue ? maxPriceValue : highestPrice.toString()}
               setMinPriceValue={setMinPriceValue}
             />
           </div>
-        </div> */}
+        </div>
         <div className="w-full flex flex-row items-center gap-5 md:justify-end max-md:justify-between">
           <div>Sort by:</div>
           <Dropdown

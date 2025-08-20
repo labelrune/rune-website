@@ -10,7 +10,7 @@ export const NavItems: NavbarType[] = [
   },
   {
     id: "2",
-    label: "Shop",
+    label: "Discover Styles",
     href: "#",
     hasDropdown: true,
     dropdownItems: [

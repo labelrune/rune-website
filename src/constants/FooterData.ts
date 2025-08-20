@@ -23,7 +23,7 @@ export const footerData: FooterData = {
   },
   socials: [
     { icon: "FaInstagram", href: "https://instagram.com/label_rune" },
-    { icon: "FaFacebook", href: "#" },
-    { icon: "FaTwitter", href: "#" },
+    // { icon: "FaFacebook", href: "#" },
+    // { icon: "FaTwitter", href: "#" },
   ],
 };

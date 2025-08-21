@@ -32,7 +32,7 @@ const Navbar = () => {
   return (
     <>
       <div ref={navRef} className="fixed top-0 left-0 w-full z-50">
-        {/* <NavbarDisclaimer /> */}
+        <NavbarDisclaimer />
 
         <nav className="w-full border-b border-gray-200 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

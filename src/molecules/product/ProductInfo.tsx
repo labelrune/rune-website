@@ -287,7 +287,7 @@ export default function ProductInfo({
               <img
                 key={link}
                 src={link}
-                className="aspect-[2/3] bg-red-300 h-full"
+                className="h-full w-full object-cover"
               />
             ))}
           </Carousel>

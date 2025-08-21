@@ -1,7 +1,6 @@
 "use-client";
 
-import React, { useState } from "react";
-import { GrPrevious, GrNext } from "react-icons/gr";
+import React, { useEffect, useState } from "react";
 import { NavbarDisclaimerData } from "src/constants/NavbarDisclaimer";
 
 const NavbarDisclaimer = () => {
@@ -15,15 +14,19 @@ const NavbarDisclaimer = () => {
     );
   };
 
-  const handlePrev = () => {
-    setDirection("prev");
-    setCurrentIndex((prevIndex) =>
-      prevIndex - 1 >= 0 ? prevIndex - 1 : NavbarDisclaimerData.length - 1
-    );
-  };
+  // const handlePrev = () => {
+  //   setDirection("prev");
+  //   setCurrentIndex((prevIndex) =>
+  //     prevIndex - 1 >= 0 ? prevIndex - 1 : NavbarDisclaimerData.length - 1
+  //   );
+  // };
+
+  useEffect(() => {
+    setInterval(() => handleNext, 1000);
+  }, []);
   return (
-    <div className="bg-[#E0D3BD] w-full h-8 flex items-center justify-between sm:px-28 px-10 sm:py-1 overflow-hidden">
-      <GrPrevious className="text-black cursor-pointer" onClick={handlePrev} />
+    <div className="bg-[#E0D3BD] w-full h-8 flex items-center justify-center sm:px-28 px-10 sm:py-1 overflow-hidden">
+      {/* <GrPrevious className="text-black cursor-pointer" onClick={handlePrev} /> */}
       <div
         key={currentIndex}
         className={`text-black text-sm transition-transform duration-300 ease-in-out ${
@@ -34,7 +37,7 @@ const NavbarDisclaimer = () => {
       >
         {NavbarDisclaimerData[currentIndex].text}
       </div>
-      <GrNext className="text-black cursor-pointer" onClick={handleNext} />
+      {/* <GrNext className="text-black cursor-pointer" onClick={handleNext} /> */}
     </div>
   );
 };

@@ -46,7 +46,7 @@ export default function ProductInfo({
 
     try {
       const url = new URL(rawLink);
-      window.open(url.toString(), "_blank", "noopener,noreferrer");
+      window.open(url.toString(), "_self");
     } catch {
       console.error("Invalid payment link:", rawLink);
     }

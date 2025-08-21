@@ -27,7 +27,7 @@ const Landing = () => {
   return (
     <div
       ref={containerRef}
-      className="w-full md:aspect-[1520/646] h-[570px] overflow-x-auto snap-x snap-mandatory flex scroll-smooth scrollbar-hide"
+      className="aspect-[1520/646] w-screen overflow-x-auto snap-x snap-mandatory flex scroll-smooth scrollbar-hide"
     >
       {LandingImages.map((item) => (
         <div className={`min-w-full h-full snap-start`} key={item.id}>

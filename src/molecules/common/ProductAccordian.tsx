@@ -27,12 +27,12 @@ const accordionData: AccordionItem[] = [
     id: 2,
     title: "General Care Instructions",
     content: (
-      <ul className="space-y-1 text-gray-700">
-        <li>• Dry Clean or Hand Wash Separately in Cold Water</li>
-        <li>• Dry in Shade, Upside Down</li>
-        <li>• Wash Whites Separately</li>
-        <li>• Natural Colours May Bleed - Always Wash Separately</li>
-      </ul>
+      <div className="flex flex-col gap-1">
+        <div className="flex gap-1"><div>•</div><span>Dry Clean or Hand Wash Separately in Cold Water</span></div>
+        <div className="flex gap-1"><div>•</div><span>Dry in Shade, Upside Down</span></div>
+        <div className="flex gap-1"><div>•</div><span>Wash Whites Separately</span></div>
+        <div className="flex gap-1"><div>•</div><span>Natural Colours May Bleed - Always Wash Separately</span></div>
+      </div>
     ),
     icon: <FaRegHeart className="text-xl" />,
   },
@@ -54,31 +54,24 @@ const accordionData: AccordionItem[] = [
     id: 4,
     title: "Exchanges & Returns",
     content: (
-      <ul className="space-y-1 text-gray-700">
-        <li>
-          • Minor irregularities in colour, texture, or weave are natural and
-          not defects.
-        </li>
-        <li>
-          • No returns; size exchanges accepted on unworn, unwashed items.
-        </li>
-        <li>
-          • Returns are eligible for store credit only; refunds apply only to
+      <div className="flex flex-col gap-1">
+        <div className="flex gap-1"><div>•</div><span>Minor irregularities in colour, texture, or weave are natural and
+          not defects.</span></div>
+        <div className="flex gap-1"><div>•</div><span>No returns; size exchanges accepted on unworn, unwashed items.
+        </span></div>
+        <div className="flex gap-1"><div>•</div><span>Returns are eligible for store credit only; refunds apply only to
           unfulfilled orders.
-        </li>
-        <li>• Report damaged items within 48 hours with proof.</li>
-        <li>
-          • Email reachus@labelrune.com with your order number for exchanges.
+        </span></div>
+        <div className="flex gap-1"><div>•</div><span>Report damaged items within 48 hours with proof.</span></div>
+        <div className="flex gap-1"><div>•</div><span>Email reachus@labelrune.com with your order number for exchanges.
           Response within 5 working days.
-        </li>
-        <li>
-          • No exchanges or returns on custom-made, international, or sale
+        </span></div>
+        <div className="flex gap-1"><div>•</div><span>No exchanges or returns on custom-made, international, or sale
           items.
-        </li>
-        <li>
-          • Ship exchanges with a note including your name and return address.
-        </li>
-      </ul>
+        </span></div>
+        <div className="flex gap-1"><div>•</div><span>Ship exchanges with a note including your name and return address.
+        </span></div>
+      </div>
     ),
     icon: <GiReturnArrow className="text-xl" />,
   },

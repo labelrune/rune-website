@@ -3,17 +3,17 @@ import { LandingImageProps } from "src/types/Landing";
 export const LandingImages: LandingImageProps[] = [
   {
     id: 1,
-    src: "https://i.ibb.co/C5xFBbSv/IMG-2923-jpg-N.jpg",
+    src: "https://i.ibb.co/BH7f3Fxc/test01.webp",
     alt: "Rune1",
   },
   {
     id: 2,
-    src: "https://i.ibb.co/whrMT4xJ/95-D3115-D-389-D-4002-8-BE4-4-F7-D7575-ED2-E.jpg",
+    src: "https://i.ibb.co/BH7f3Fxc/test01.webp",
     alt: "Rune2",
   },
   {
     id: 3,
-    src: "https://i.ibb.co/HTQFJy3J/5664-AABB-CBA7-4-B7-B-9465-1576-AA007-CDC.jpg",
+    src: "https://i.ibb.co/BH7f3Fxc/test01.webp",
     alt: "Rune3",
   },
   {

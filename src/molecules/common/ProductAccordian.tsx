@@ -11,7 +11,7 @@ import { AccordionItem } from "src/types/common";
 const accordionData: AccordionItem[] = [
   {
     id: 1,
-    title: "Shipping & Returns",
+    title: "Shipping",
     content: (
       <div className="space-y-1 text-gray-700">
         <p className="font-medium">Estimated Shipping:</p>

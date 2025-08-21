@@ -19,7 +19,7 @@ const LabelsData = async ({ catalogue }: { catalogue: CatalogueEnum }) => {
   const catalogueText = catalogue;
 
   return (
-    <div className="flex flex-col items-center justify-center gap-6 mt-20">
+    <div className="flex flex-col items-center justify-center gap-6 mt-7 md:mt-20">
       <div className="flex flex-col items-center gap-1">
         <div className="text-3xl capitalize">{catalogueText}</div>
         <Link
@@ -30,9 +30,8 @@ const LabelsData = async ({ catalogue }: { catalogue: CatalogueEnum }) => {
         </Link>
       </div>
       <div
-        className={`flex ${
-          filteredCatalogueData.length <= 3 ? "md:justify-center" : ""
-        } w-full md:gap-[2%] gap-3 overflow-x-scroll snap-x snap-mandatory scroll-smooth scrollbar-hide`}
+        className={`flex ${filteredCatalogueData.length <= 3 ? "md:justify-center" : ""
+          } w-full md:gap-[2%] gap-3 overflow-x-scroll snap-x snap-mandatory scroll-smooth scrollbar-hide`}
       >
         {filteredCatalogueData.map((item, index) => {
           return (

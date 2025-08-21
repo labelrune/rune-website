@@ -114,8 +114,7 @@ const defaultTermsData: TermsData = {
       heading: "4. Orders and Cancellations",
       bullets: [
         "An order confirmation is sent once payment is received.",
-        "We may cancel or refuse orders due to stock issues, errors, or suspected fraud.",
-        "Customers may cancel before dispatch; after dispatch, cancellations are not accepted."
+        "We may cancel or refuse orders due to stock issues, errors, or suspected fraud."
       ]
     },
     {
@@ -150,8 +149,7 @@ const defaultTermsData: TermsData = {
     {
       heading: "9. Governing Law and Jurisdiction",
       bullets: [
-        "These Terms are governed by the laws of India.",
-        "Any disputes shall be subject to the courts of [Your City, State]."
+        "These Terms are governed by the laws of India."
       ]
     },
     {

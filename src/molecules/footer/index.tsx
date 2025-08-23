@@ -9,15 +9,21 @@ export const Footer = () => {
   return (
     <footer className="w-full max-w-7xl mx-auto bg-white text-black px-6 py-12 border-t-2 border-gray-100">
       <div className="grid grid-cols-1 md:grid-cols-4 max-sm:gap-10 mb-10">
-        <div className="flex justify-center md:justify-start">
-          <Link
-            href="/"
-            className="flex items-center text-xl font-serif tracking-wide"
-          >
-            <img src="/logo.png" alt="Logo" className="h-6 mr-2" />
-            RUNE
-          </Link>
-        </div>
+        <Link
+          href="/"
+          className="max-sm:flex-1 flex justify-center md:justify-start items-center gap-2"
+        >
+          <img
+            src="/rune-logo.png"
+            alt="rune-logo"
+            className="h-16 w-16 object-cover"
+          />
+          <img
+            src="/rune-text.png"
+            alt="rune-text"
+            className="h-32 w-32 object-cover"
+          />
+        </Link>
 
         <div>
           <h3 className="font-serif text-lg mb-4">

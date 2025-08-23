@@ -25,11 +25,11 @@ const NavbarDisclaimer = () => {
     setInterval(() => handleNext, 1000);
   }, []);
   return (
-    <div className="bg-[#E0D3BD] w-full h-8 flex items-center justify-center sm:px-28 px-10 sm:py-1 overflow-hidden">
+    <div className="text-[#FDF7ED] bg-[#293035] w-full h-8 flex items-center justify-center sm:px-28 px-10 sm:py-1 overflow-hidden">
       {/* <GrPrevious className="text-black cursor-pointer" onClick={handlePrev} /> */}
       <div
         key={currentIndex}
-        className={`text-black text-sm transition-transform duration-300 ease-in-out ${
+        className={`text-sm transition-transform duration-300 ease-in-out ${
           direction === "next"
             ? "animate-slide-in-right"
             : "animate-slide-in-left"

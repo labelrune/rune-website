@@ -378,7 +378,7 @@ export default function ProductInfo({
           </div> */}
           <div
             onClick={() => handleBuyNow(selectedSize.paymentLink)}
-            className="flex transition-all rounded-md justify-center items-center text-[#FDF7ED] hover:opacity-90 bg-[#293035] py-4 cursor-pointer text-xl mt-8"
+            className="flex transition-all rounded-md justify-center items-center text-[#FDF7ED] bg-[#293035] hover:opacity-90 py-4 cursor-pointer text-xl mt-8"
           >
             BUY NOW
           </div>
@@ -411,7 +411,7 @@ export default function ProductInfo({
                 className="snap-center flex flex-col gap-2 md:gap-3 group w-[calc(100%/2-12px)] md:w-[calc(100%/4-12px)]"
                 key={index}
               >
-                <div className="aspect-[7/6] overflow-hidden md:aspect-[357/618] w-full relative cursor-pointer rounded-sm">
+                <div className="overflow-hidden aspect-[357/618] w-full relative cursor-pointer rounded-sm">
                   <img
                     src={imageLinks[randomIndex]}
                     alt={productName}

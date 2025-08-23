@@ -3,7 +3,7 @@ import { ContactForm } from "src/molecules/contact";
 
 const Contact = () => {
   return (
-    <div className="pt-20">
+    <div className="md:pt-20">
       <ContactForm />
     </div>
   );

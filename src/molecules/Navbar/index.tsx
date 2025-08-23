@@ -7,10 +7,10 @@ import { FiUser, FiChevronDown, FiX, FiMenu } from "react-icons/fi";
 import { NavItems } from "src/constants/NavbarData";
 import { useRouter } from "next/navigation";
 
-import localFont from 'next/font/local'
+import localFont from "next/font/local";
 
 const LogoFont = localFont({
-  src: './TrajanPro-Regular.otf',
+  src: "./TrajanPro-Regular.otf",
 });
 
 const Navbar = () => {
@@ -54,14 +54,21 @@ const Navbar = () => {
                 </button>
               </div>
 
-              <div className="max-sm:flex-1 flex justify-center md:justify-start">
-                <Link
-                  href="/"
-                  className={`flex items-center text-xl font-serif tracking-wide ${LogoFont.className}`}
-                >
-                  RUNE
-                </Link>
-              </div>
+              <Link
+                href="/"
+                className="max-sm:flex-1 flex justify-center md:justify-start items-center gap-2"
+              >
+                <img
+                  src="/rune-logo.png"
+                  alt="rune-logo"
+                  className="h-16 w-16 object-cover"
+                />
+                <img
+                  src="/rune-text.png"
+                  alt="rune-text"
+                  className="h-32 w-32 object-cover"
+                />
+              </Link>
 
               <div className="flex items-center space-x-8 max-sm:hidden">
                 {NavItems.map((item) => {
@@ -79,16 +86,18 @@ const Navbar = () => {
                             router.push(item.href);
                           }
                         }}
-                        className={`flex items-center gap-1 text-sm ${item.isHighlighted
+                        className={`flex items-center gap-1 text-sm ${
+                          item.isHighlighted
                             ? "text-red-500"
                             : "text-gray-800 hover:text-gray-600"
-                          } hover:underline hover:underline-offset-4`}
+                        } hover:underline hover:underline-offset-4`}
                       >
                         {item.label}
                         {item.hasDropdown && (
                           <FiChevronDown
-                            className={`text-lg transition-transform ${isOpen ? "rotate-180" : ""
-                              }`}
+                            className={`text-lg transition-transform ${
+                              isOpen ? "rotate-180" : ""
+                            }`}
                           />
                         )}
                       </div>
@@ -128,8 +137,9 @@ const Navbar = () => {
           </div>
 
           <div
-            className={`fixed top-0 left-0 h-full w-3/4 max-w-xs bg-white shadow-lg transform transition-transform duration-300 z-40 ${mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-              } md:hidden`}
+            className={`fixed top-0 left-0 h-full w-3/4 max-w-xs bg-white shadow-lg transform transition-transform duration-300 z-40 ${
+              mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+            } md:hidden`}
           >
             <div className="p-6 space-y-4">
               {NavItems.map((item) => {
@@ -148,16 +158,18 @@ const Navbar = () => {
                           }
                         >
                           <span
-                            className={`${item.isHighlighted
+                            className={`${
+                              item.isHighlighted
                                 ? "text-red-500"
                                 : "text-gray-800"
-                              }`}
+                            }`}
                           >
                             {item.label}
                           </span>
                           <FiChevronDown
-                            className={`transition-transform duration-300 ${isExpanded ? "rotate-180" : ""
-                              }`}
+                            className={`transition-transform duration-300 ${
+                              isExpanded ? "rotate-180" : ""
+                            }`}
                           />
                         </button>
                         {isExpanded && (
@@ -181,8 +193,9 @@ const Navbar = () => {
                     ) : (
                       <Link
                         href={item.href}
-                        className={`block text-lg ${item.isHighlighted ? "text-red-500" : "text-gray-800"
-                          }`}
+                        className={`block text-lg ${
+                          item.isHighlighted ? "text-red-500" : "text-gray-800"
+                        }`}
                         onClick={() => {
                           setOpenDropdown(null);
                           setMobileMenuOpen(false);

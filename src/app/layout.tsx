@@ -38,7 +38,7 @@ export default function RootLayout({
           target="_blank"
           className="fixed bottom-8 right-8 md:bottom-16 md:right-16 animate-pulse hover:animate-none w-12 md:w-16 aspect-square"
         >
-          <img src="/whatsapp.svg" className="w-full h-full object-cover" />
+          <img src="/whatsapp.svg" alt="Contact via Whatsapp" className="w-full h-full object-cover" />
         </Link>
       </body>
     </html>

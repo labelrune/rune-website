@@ -39,11 +39,13 @@ export default function RootLayout({
           className="fixed bottom-8 right-8 md:bottom-16 md:right-16 animate-pulse hover:animate-none w-12 md:w-16 aspect-square"
           aria-label="rune-whatsapp"
         >
+
           <img
             src="/whatsapp.svg"
             alt="whatsapp_image"
             className="w-full h-full object-cover"
           />
+
         </Link>
       </body>
     </html>

@@ -42,13 +42,13 @@ export const ContactForm = () => {
   });
 
   return (
-    <section className="flex items-start justify-center p-20 gap-12 w-full">
-      <div className="w-[50%]">
-        <div className="text-4xl font-serif mb-4">Get in touch.</div>
-        <div className="mb-8 text-gray-700 text-[16px] max-w-[400px]">
+    <section className="flex flex-col lg:flex-row items-start justify-center px-4 py-12 gap-12 w-full">
+      <div className="w-full lg:w-1/2">
+        <div className="text-3xl md:text-4xl font-serif mb-4">Get in touch.</div>
+        <div className="mb-8 text-gray-700 text-[16px] max-w-md">
           Reach out to us anytime. We’re here to answer your questions promptly.
         </div>
-        <div className="flex-1 space-y-4">
+        <div className="space-y-4">
           <p className="text-[16px]">
             <span className="font-bold">Phone:</span> +91 9008255433
           </p>
@@ -56,15 +56,15 @@ export const ContactForm = () => {
             <span className="font-bold">Email:</span> reachus@labelrune.com
           </p>
           <p className="text-[16px]">
-            <span className="font-bold">Address:</span> 213, 1st Main Rd, 7th
-            Block, Koramangala, Bengaluru, Karnataka 560030
+            <span className="font-bold">Address:</span> 213, 1st Main Rd, 7th Block, Koramangala, Bengaluru, Karnataka 560030
           </p>
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row gap-12 w-[50%]">
+
+      <div className="w-full lg:w-1/2">
         <form
           onSubmit={handleSubmit}
-          className="flex-1 flex flex-col gap-4"
+          className="flex flex-col gap-4"
           noValidate
         >
           <div className="flex flex-col md:flex-row md:space-x-4">
@@ -75,11 +75,10 @@ export const ContactForm = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.name}
-                className={`w-full border px-4 py-2 ${
-                  touched.name && errors.name
+                className={`w-full border px-4 py-2 ${touched.name && errors.name
                     ? "border-red-500"
                     : "border-black"
-                }`}
+                  }`}
               />
               {touched.name && errors.name && (
                 <p className="text-red-600 text-sm mt-1">{errors.name}</p>
@@ -93,11 +92,10 @@ export const ContactForm = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.email}
-                className={`w-full border px-4 py-2 ${
-                  touched.email && errors.email
+                className={`w-full border px-4 py-2 ${touched.email && errors.email
                     ? "border-red-500"
                     : "border-black"
-                }`}
+                  }`}
               />
               {touched.email && errors.email && (
                 <p className="text-red-600 text-sm mt-1">{errors.email}</p>
@@ -112,11 +110,10 @@ export const ContactForm = () => {
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.phone}
-              className={`w-full border px-4 py-2 ${
-                touched.phone && errors.phone
+              className={`w-full border px-4 py-2 ${touched.phone && errors.phone
                   ? "border-red-500"
                   : "border-black"
-              }`}
+                }`}
             />
             {touched.phone && errors.phone && (
               <p className="text-red-600 text-sm mt-1">{errors.phone}</p>
@@ -131,11 +128,10 @@ export const ContactForm = () => {
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.comment}
-              className={`w-full border px-4 py-2 resize-none ${
-                touched.comment && errors.comment
+              className={`w-full border px-4 py-2 resize-none ${touched.comment && errors.comment
                   ? "border-red-500"
                   : "border-black"
-              }`}
+                }`}
             />
             {touched.comment && errors.comment && (
               <p className="text-red-600 text-sm mt-1">{errors.comment}</p>

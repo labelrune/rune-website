@@ -59,11 +59,6 @@ const Navbar = () => {
                 className="max-sm:flex-1 flex justify-center md:justify-start items-center gap-2"
               >
                 <img
-                  src="/rune-logo.png"
-                  alt="rune-logo"
-                  className="h-16 w-16 object-cover"
-                />
-                <img
                   src="/rune-text.png"
                   alt="rune-text"
                   className="h-32 w-32 object-cover"

@@ -34,7 +34,12 @@ const Landing = () => {
           <img
             src={item.src}
             alt={item.alt}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover hidden md:block"
+          />
+          <img
+            src={item.src_mobile}
+            alt={item.alt}
+            className="w-full h-full object-cover block md:hidden"
           />
         </div>
       ))}

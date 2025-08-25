@@ -5,8 +5,14 @@ import { LandingImages } from "src/constants/Landing";
 
 const Landing = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const totalSlides = LandingImages.length;
+  const [totalSlides, setTotalSlides] = useState(LandingImages.length);
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.innerWidth < 640) {
+      setTotalSlides(4);
+    }
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {

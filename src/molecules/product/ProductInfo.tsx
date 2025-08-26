@@ -383,6 +383,23 @@ export default function ProductInfo({
             BUY NOW
           </div>
           <div className="mt-8 text-lg whitespace-pre-wrap">{description}</div>
+          <div>
+            Looking for customization? Drop us an email at{" "}
+            <Link
+              href="mailto:reachus@labelrune.com"
+              className="cursor-pointer underline text-blue-500 underline-offset-4"
+            >
+              reachus@labelrune.com
+            </Link>{" "}
+            or WhatsApp us at{" "}
+            <Link
+              href="https://wa.me/+919008255433?text=Hey!"
+              target="_blank"
+              className="underline underline-offset-4 text-blue-500"
+            >
+              +91 90082 55433.
+            </Link>{" "}
+          </div>
           {specification.map(({ key, value }) => (
             <div className="flex flex-row mt-2 text-xl" key={key}>
               <div className="font-semibold">{key}</div>

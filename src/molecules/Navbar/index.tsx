@@ -56,7 +56,7 @@ const Navbar = () => {
 
               <Link
                 href="/"
-                className="max-sm:flex-1 flex justify-center md:justify-start items-center gap-2"
+                className="absolute left-1/2 transform -translate-x-1/2 md:static md:translate-x-0 flex items-center gap-2"
               >
                 <img
                   src="/rune-text.png"

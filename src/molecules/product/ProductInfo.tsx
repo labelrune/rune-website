@@ -383,6 +383,7 @@ export default function ProductInfo({
             BUY NOW
           </div>
           <div className="mt-8 text-lg whitespace-pre-wrap">{description}</div>
+          <hr/>
           <div>
             Looking for customization? Drop us an email at{" "}
             <Link

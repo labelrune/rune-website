@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "src/molecules/Navbar";
 import { Footer } from "src/molecules/footer";
 import Link from "next/link";
+import FacebookPixel from "src/molecules/common/FacebookPixel";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,6 +20,8 @@ export const metadata: Metadata = {
   title: "Rune",
   description: "Rune Website",
 };
+
+const MetaPixelID = process.env.META_PIXEL_ID ?? "";
 
 export default function RootLayout({
   children,
@@ -47,6 +50,7 @@ export default function RootLayout({
           />
 
         </Link>
+        <FacebookPixel pixelID={MetaPixelID} />
       </body>
     </html>
   );

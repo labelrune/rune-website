@@ -5,6 +5,7 @@ import Navbar from "src/molecules/Navbar";
 import { Footer } from "src/molecules/footer";
 import Link from "next/link";
 import FacebookPixel from "src/molecules/common/FacebookPixel";
+import { Suspense } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={⁠ ${geistSans.variable} ${geistMono.variable} antialiased ⁠}
       >
         <Navbar />
         <div className="pt-28">{children}</div>
@@ -42,15 +43,15 @@ export default function RootLayout({
           className="fixed bottom-8 right-8 md:bottom-16 md:right-16 animate-pulse hover:animate-none w-12 md:w-16 aspect-square"
           aria-label="rune-whatsapp"
         >
-
           <img
             src="/whatsapp.svg"
             alt="whatsapp_image"
             className="w-full h-full object-cover"
           />
-
         </Link>
-        <FacebookPixel pixelID={MetaPixelID} />
+        <Suspense fallback={null}>
+          <FacebookPixel pixelID={MetaPixelID} />
+        </Suspense>
       </body>
     </html>
   );

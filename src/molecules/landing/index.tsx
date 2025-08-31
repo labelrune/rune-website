@@ -42,9 +42,15 @@ const Landing = () => {
             alt={item.alt}
             className="w-full h-full object-cover hidden md:block"
           />
-          <img
-            src={item.src_mobile}
+          <Image
+            src={item.src_mobile}     // remote WebP from your S3 bucket
             alt={item.alt}
+            width={800}               // pick realistic max display width
+            height={600}              // preserve aspect ratio
+            priority                  // preload + high fetchpriority
+            placeholder="blur"        // blur-up while decoding
+          {/*   blurDataURL="data:image/webp;base64,..." // tiny base64 preview */}
+            sizes="(max-width:768px) 100vw"          // tell browser how wide it will render
             className="w-full h-full object-cover block md:hidden"
           />
         </div>

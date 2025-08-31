@@ -2,6 +2,7 @@
 
 import React, { useRef, useEffect, useState } from "react";
 import { LandingImages } from "src/constants/Landing";
+import Image from "next/image";
 
 const Landing = () => {
   const containerRef = useRef<HTMLDivElement>(null);

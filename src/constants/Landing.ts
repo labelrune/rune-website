@@ -9,7 +9,7 @@ export const LandingImages: LandingImageProps[] = [
   },
   {
     id: 2,
-    src: "https://s3.ap-south-1.amazonaws.com/www.ultraviolette.com/temp-2/bnr-2.webp",//"https://i.ibb.co/WNwmZB4x/rune-banner-2.webp",
+    src: "https://s3.ap-south-1.amazonaws.com/www.ultraviolette.com/temp-2/bnr-2_11zon.webp",//"https://i.ibb.co/WNwmZB4x/rune-banner-2.webp",
     alt: "Rune Banner 2",
     src_mobile: "https://i.ibb.co/rKGbhRrf/1.jpg",
   },

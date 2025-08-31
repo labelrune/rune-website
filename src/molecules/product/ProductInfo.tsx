@@ -378,7 +378,7 @@ export default function ProductInfo({
           </div> */}
           <div
             onClick={() => handleBuyNow(selectedSize.paymentLink)}
-            className="flex transition-all rounded-md justify-center items-center text-[#FDF7ED] bg-[#293035] hover:opacity-90 py-4 cursor-pointer text-xl mt-8"
+            className="flex transition-all rounded-md justify-center items-center shadow-slate-800 shadow-md hover:shadow-lg text-[#FDF7ED] bg-[#293035] hover:opacity-90 py-4 cursor-pointer text-xl mt-8"
           >
             BUY NOW
           </div>

@@ -2,17 +2,18 @@ import { LandingImageProps } from "src/types/Landing";
 
 export const LandingImages: LandingImageProps[] = [
   {
-    id: 1,
-    src: "https://i.ibb.co/svQ4bCfW/rune-banner-1.webp",
-    alt: "Rune Banner 1",
-    src_mobile: "https://i.ibb.co/nFfVH1z/image.jpg",
-  },
-  {
     id: 2,
     src: "https://i.ibb.co/WNwmZB4x/rune-banner-2.webp",
     alt: "Rune Banner 2",
     src_mobile: "https://s3.ap-south-1.amazonaws.com/www.ultraviolette.com/temp-2/bnr-2_11zon.webp",
   },
+  {
+    id: 1,
+    src: "https://i.ibb.co/svQ4bCfW/rune-banner-1.webp",
+    alt: "Rune Banner 1",
+    src_mobile: "https://i.ibb.co/nFfVH1z/image.jpg",
+  },
+  
   {
     id: 3,
     src: "https://i.ibb.co/20dLDv38/rune-banner-3.webp",

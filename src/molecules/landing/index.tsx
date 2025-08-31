@@ -32,25 +32,27 @@ const Landing = () => {
   }, [currentSlide]);
 
   return (
-    <div
-      ref={containerRef}
-      className="aspect-[1/2] md:aspect-[1520/646] w-screen overflow-x-auto snap-x snap-mandatory flex scroll-smooth scrollbar-hide"
-    >
-      {LandingImages.map((item) => (
-        <div className={`min-w-full h-full snap-start`} key={item.id}>
-          <img
-            src={item.src}
-            alt={item.alt}
-            className="w-full h-full object-cover hidden md:block"
-          />
-          <img
-            src={item.src_mobile}
-            alt={item.alt}
-            className="w-full h-full object-cover block md:hidden"
-          />
-        </div>
-      ))}
-    </div>
+    <>
+      <div
+        ref={containerRef}
+        className="aspect-[1/2] md:aspect-[1520/646] w-screen overflow-x-auto snap-x snap-mandatory flex scroll-smooth scrollbar-hide"
+      >
+        {LandingImages.map((item) => (
+          <div className={`min-w-full h-full snap-start`} key={item.id}>
+            <img
+              src={item.src}
+              alt={item.alt}
+              className="w-full h-full object-cover hidden md:block"
+            />
+            <img
+              src={item.src_mobile}
+              alt={item.alt}
+              className="w-full h-full object-cover block md:hidden"
+            />
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 

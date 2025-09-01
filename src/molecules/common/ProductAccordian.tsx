@@ -28,10 +28,22 @@ const accordionData: AccordionItem[] = [
     title: "General Care Instructions",
     content: (
       <div className="flex flex-col gap-1">
-        <div className="flex gap-1"><div>•</div><span>Dry Clean or Hand Wash Separately in Cold Water</span></div>
-        <div className="flex gap-1"><div>•</div><span>Dry in Shade, Upside Down</span></div>
-        <div className="flex gap-1"><div>•</div><span>Wash Whites Separately</span></div>
-        <div className="flex gap-1"><div>•</div><span>Natural Colours May Bleed - Always Wash Separately</span></div>
+        <div className="flex gap-1">
+          <div>•</div>
+          <span>Dry Clean or Hand Wash Separately in Cold Water</span>
+        </div>
+        <div className="flex gap-1">
+          <div>•</div>
+          <span>Dry in Shade, Upside Down</span>
+        </div>
+        <div className="flex gap-1">
+          <div>•</div>
+          <span>Wash Whites Separately</span>
+        </div>
+        <div className="flex gap-1">
+          <div>•</div>
+          <span>Natural Colours May Bleed - Always Wash Separately</span>
+        </div>
       </div>
     ),
     icon: <FaRegHeart className="text-xl" />,
@@ -55,22 +67,50 @@ const accordionData: AccordionItem[] = [
     title: "Exchanges & Returns",
     content: (
       <div className="flex flex-col gap-1">
-        <div className="flex gap-1"><div>•</div><span>Minor irregularities in colour, texture, or weave are natural and
-          not defects.</span></div>
-        <div className="flex gap-1"><div>•</div><span>No returns; size exchanges accepted on unworn, unwashed items.
-        </span></div>
-        <div className="flex gap-1"><div>•</div><span>Returns are eligible for store credit only; refunds apply only to
-          unfulfilled orders.
-        </span></div>
-        <div className="flex gap-1"><div>•</div><span>Report damaged items within 48 hours with proof.</span></div>
-        <div className="flex gap-1"><div>•</div><span>Email reachus@labelrune.com with your order number for exchanges.
-          Response within 5 working days.
-        </span></div>
-        <div className="flex gap-1"><div>•</div><span>No exchanges or returns on custom-made, international, or sale
-          items.
-        </span></div>
-        <div className="flex gap-1"><div>•</div><span>Ship exchanges with a note including your name and return address.
-        </span></div>
+        <div className="flex gap-1">
+          <div>•</div>
+          <span>
+            Minor irregularities in colour, texture, or weave are natural and
+            not defects.
+          </span>
+        </div>
+        <div className="flex gap-1">
+          <div>•</div>
+          <span>
+            No returns; size exchanges accepted on unworn, unwashed items.
+          </span>
+        </div>
+        <div className="flex gap-1">
+          <div>•</div>
+          <span>
+            Returns are eligible for store credit only; refunds apply only to
+            unfulfilled orders.
+          </span>
+        </div>
+        <div className="flex gap-1">
+          <div>•</div>
+          <span>Report damaged items within 48 hours with proof.</span>
+        </div>
+        <div className="flex gap-1">
+          <div>•</div>
+          <span>
+            Email reachus@labelrune.com with your order number for exchanges.
+            Response within 5 working days.
+          </span>
+        </div>
+        <div className="flex gap-1">
+          <div>•</div>
+          <span>
+            No exchanges or returns on custom-made, international, or sale
+            items.
+          </span>
+        </div>
+        <div className="flex gap-1">
+          <div>•</div>
+          <span>
+            Ship exchanges with a note including your name and return address.
+          </span>
+        </div>
       </div>
     ),
     icon: <GiReturnArrow className="text-xl" />,
@@ -106,7 +146,7 @@ export default function ProductAccordion() {
           <div
             className={`overflow-hidden transition-all duration-300 ${
               openId === item.id
-                ? "max-h-96 opacity-100 md:p-4"
+                ? "max-h-96 opacity-100 md:p-4 max-sm:pb-4"
                 : "max-h-0 opacity-0"
             }`}
           >

@@ -30,8 +30,9 @@ const LabelsData = async ({ catalogue }: { catalogue: CatalogueEnum }) => {
         </Link>
       </div>
       <div
-        className={`flex ${filteredCatalogueData.length <= 3 ? "md:justify-center" : ""
-          } w-full md:gap-[2%] gap-3 overflow-x-scroll snap-x snap-mandatory scroll-smooth scrollbar-hide`}
+        className={`flex ${
+          filteredCatalogueData.length <= 3 ? "md:justify-center" : ""
+        } w-full md:gap-[2%] gap-3 overflow-x-scroll snap-x snap-mandatory scroll-smooth scrollbar-hide`}
       >
         {filteredCatalogueData.map((item, index) => {
           return (
@@ -55,7 +56,7 @@ const LabelsData = async ({ catalogue }: { catalogue: CatalogueEnum }) => {
               <div className="group-hover:underline group-hover:underline-offset-4 capatilize">
                 {item.productName}
               </div>
-              <div>{`MRP ${formatPrice(
+              <div className="max-sm:text-sm">{`MRP ${formatPrice(
                 item.sizes[SizeChart.XS].netPrice
               )}`}</div>
             </Link>

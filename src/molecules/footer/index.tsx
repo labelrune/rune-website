@@ -100,7 +100,7 @@ export const Footer = () => {
           <FaInstagram className="text-xl" />
         </a>
       </div> */}
-      <div className="border-t border-gray-300 flex flex-col md:flex-row items-center justify-center gap-4">
+      <div className="border-t border-gray-300 flex max-sm:py-2 flex-col md:flex-row items-center justify-center gap-4">
         <p className="text-xs text-center md:text-left">
           Copyright©RUNE. All rights reserved
         </p>

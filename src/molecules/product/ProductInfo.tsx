@@ -9,8 +9,31 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { createPortal } from "react-dom";
 import Link from "next/link";
+import Marquee from "react-fast-marquee";
+import { FaFire, FaLeaf, FaLock, FaShippingFast, FaStar } from "react-icons/fa";
 
-const MaxQuantity = 9;
+const highlights = [
+  {
+    color: "blue-500",
+    text: "Free Shipping on Orders Above $50",
+  },
+  {
+    color: "red-500",
+    text: "Limited Time Discount - Up to 30% Off",
+  },
+  {
+    color: "green-500",
+    text: "Eco-Friendly & Sustainable Products",
+  },
+  {
+    color: "yellow-500",
+    text: "4.9/5 Customer Ratings",
+  },
+  {
+    color: "purple-500",
+    text: "Secure Payment Gateway",
+  },
+];
 
 export default function ProductInfo({
   productData: product,
@@ -325,7 +348,7 @@ export default function ProductInfo({
           {Object.keys(sizeOptions).length ? (
             <div className="flex flex-row justify-between items-center w-full mt-4">
               {/* <div>Size</div> */}
-              <div className="">
+              <div className="text-xs md:text-sm">
                 *No hidden charges. Select your size at checkout.
               </div>
               <div
@@ -383,7 +406,7 @@ export default function ProductInfo({
             BUY NOW
           </div>
           <div className="mt-8 text-lg whitespace-pre-wrap">{description}</div>
-          <hr/>
+          <hr className="max-sm:text-gray-200" />
           <div>
             Looking for customization? Drop us an email at{" "}
             <Link
@@ -411,9 +434,24 @@ export default function ProductInfo({
             <ProductAccordion />
           </div>
         </div>
+        {/* <div className="mt-4 md:hidden">
+          {
+            <Marquee autoFill>
+              {highlights.map((item, index) => (
+                <span
+                  key={index}
+                  className={`flex items-center text-${item.color} text-base font-medium mx-6 whitespace-nowrap`}
+                >
+                  {item.text}
+                </span>
+              ))}
+            </Marquee>
+          }
+        </div> */}
       </div>
+
       <div className="flex flex-col my-16 gap-12 justify-center items-center w-full">
-        <div className="text-3xl">You may also like</div>
+        <div className="text-3xl">Handpicked for you</div>
         <div className="flex flex-row flex-wrap gap-4 justify-center items-center w-full">
           {associatedProducts.map((product, index) => {
             const { productName, sizes } = product;
@@ -445,7 +483,7 @@ export default function ProductInfo({
                   {productName}
                 </div>
                 {sizes[SizeChart.XS].netPrice && (
-                  <div className="flex gap-2 items-center">
+                  <div className="flex gap-2 items-center max-sm:text-sm">
                     {sizes[SizeChart.XS].grossPrice && (
                       <span className="line-through">{`MRP ${formatPrice(
                         sizes[SizeChart.XS].grossPrice

@@ -132,7 +132,7 @@ const Navbar = () => {
           </div>
 
           <div
-            className={`fixed top-0 left-0 h-full w-3/4 max-w-xs bg-white shadow-lg transform transition-transform duration-300 z-40 ${
+            className={`fixed top-0 left-0 h-full flex flex-col justify-center gap-3 w-3/4 max-w-xs bg-white shadow-lg transform transition-transform duration-300 z-40 ${
               mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
             } md:hidden`}
           >
@@ -143,9 +143,9 @@ const Navbar = () => {
                 return (
                   <div key={item.id}>
                     {item.hasDropdown ? (
-                      <div>
+                      <div className={`${isExpanded ? "h-40" : "h-8"} transition-all`}>
                         <button
-                          className="flex justify-between items-center w-full text-left text-lg text-gray-800"
+                          className="flex justify-between items-center w-full text-left text-xl text-gray-800"
                           onClick={() =>
                             setExpandedMobileDropdown(
                               isExpanded ? null : item.id
@@ -202,9 +202,6 @@ const Navbar = () => {
                   </div>
                 );
               })}
-            </div>
-            <div className="absolute bottom-6 left-6 text-gray-500 text-sm">
-              <FiUser className="w-5 h-5 text-gray-800 hover:text-gray-600" />
             </div>
           </div>
 

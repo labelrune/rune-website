@@ -58,7 +58,7 @@ export default function StoreProducts({ products }: { products: FBProduct[] }) {
   const [minPriceValue, setMinPriceValue] = useState('');
   const [maxPriceValue, setMaxPriceValue] = useState('');
 
-  const [sortBy, setSortBy] = useState<DropdownItem | null>({value: SortByEnum.FEATURED, label: SortByOptionsMap[SortByEnum.FEATURED]});
+  const [sortBy, setSortBy] = useState<DropdownItem | null>({ value: SortByEnum.FEATURED, label: SortByOptionsMap[SortByEnum.FEATURED] });
 
   const sortedProducts = useMemo(() => {
     if (!sortBy) return products;
@@ -90,9 +90,9 @@ export default function StoreProducts({ products }: { products: FBProduct[] }) {
 
   return (
     <>
-      <div className="mt-8 w-full flex flex-col md:flex-row max-md:gap-4 items-center justify-between">
-        <div className="w-full flex flex-row gap-5 max-md:justify-between items-center">
-          {/* <div className="flex flex-row gap-5">
+      <div className="w-full flex flex-col md:flex-row max-md:gap-4 items-center justify-between">
+        {/* <div className="w-full flex flex-row gap-5 max-md:justify-between items-center"> */}
+        {/* <div className="flex flex-row gap-5">
             <div>Filter:</div>
             <Availability
               stockSelection={stockSelection}
@@ -101,7 +101,7 @@ export default function StoreProducts({ products }: { products: FBProduct[] }) {
               totalAvailableCount={products.length}
             />
           </div> */}
-          <div className="flex flex-row gap-5">
+        {/* <div className="flex flex-row gap-5">
             <PriceDropdown
               minPriceValue={minPriceValue}
               setMaxPriceValue={setMaxPriceValue}
@@ -109,18 +109,20 @@ export default function StoreProducts({ products }: { products: FBProduct[] }) {
               setMinPriceValue={setMinPriceValue}
             />
           </div>
-        </div>
+        </div> */}
         <div className="w-full flex flex-row items-center gap-5 md:justify-end max-md:justify-between">
-          <div>Sort by:</div>
-          <Dropdown
-            defaultLabel={SortByEnum.FEATURED}
-            preselectFirst
-            selectedItem={sortBy}
-            setSelectedItem={setSortBy}
-            onSelect={setSortBy}
-            items={SortByOptions}
-          />
-          <div>{products.length} products</div>
+          <div className="flex flex-row gap-2.5 items-center">
+            <div>Sort by:</div>
+            <Dropdown
+              defaultLabel={SortByEnum.FEATURED}
+              preselectFirst
+              selectedItem={sortBy}
+              setSelectedItem={setSortBy}
+              onSelect={setSortBy}
+              items={SortByOptions}
+            />
+          </div>
+          <div><span className="font-semibold">{products.length}</span> products</div>
         </div>
       </div>
       <div className="w-full flex flex-wrap pt-4 gap-4 md:gap-5 justify-start mt-4">

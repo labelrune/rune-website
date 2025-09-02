@@ -341,14 +341,14 @@ export default function ProductInfo({
             </div>
           )}
           {selectedSize.netPrice !== "" && (
-            <div className="text-xl">MRP ₹ {selectedSize.netPrice}</div>
+            <div className="text-xl">MRP ₹ {formatPrice(selectedSize.netPrice)}</div>
           )}
           {/* <div>Tax included. Shipping calculated at checkout.</div>
           Instead, we will add a short description */}
           {Object.keys(sizeOptions).length ? (
             <div className="flex flex-row justify-between items-center w-full mt-4">
               {/* <div>Size</div> */}
-              <div className="text-xs md:text-sm">
+              <div className="text-xs md:text-sm flex-1 text-balance">
                 *No hidden charges. Select your size at checkout.
               </div>
               <div
@@ -464,7 +464,7 @@ export default function ProductInfo({
                 href={`/product/${product.id}-${productName
                   .replace(/\s+/g, "-")
                   .toLowerCase()}`}
-                className="snap-center flex flex-col gap-2 md:gap-3 group w-[calc(100%/2-12px)] md:w-[calc(100%/4-12px)]"
+                className="snap-center flex flex-col gap-0.5 md:gap-2 group w-[calc(100%/2-12px)] md:w-[calc(100%/4-12px)]"
                 key={index}
               >
                 <div className="overflow-hidden aspect-[357/618] w-full relative cursor-pointer rounded-sm">
@@ -479,7 +479,7 @@ export default function ProductInfo({
                     className="absolute inset-0 w-full h-full object-cover opacity-0 transition-all duration-700 group-hover:opacity-100 group-hover:scale-105"
                   />
                 </div>
-                <div className="group-hover:underline group-hover:underline-offset-4 capatilize cursor-pointer">
+                <div className="group-hover:underline group-hover:underline-offset-4 text-lg capatilize cursor-pointer">
                   {productName}
                 </div>
                 {sizes[SizeChart.XS].netPrice && (

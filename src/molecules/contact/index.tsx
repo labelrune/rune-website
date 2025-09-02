@@ -44,7 +44,7 @@ export const ContactForm = () => {
   return (
     <section className="flex flex-col lg:flex-row items-start justify-center px-4 py-12 gap-12 w-full">
       <div className="w-full lg:w-1/2">
-        <div className="text-3xl md:text-4xl font-serif mb-4">Get in touch.</div>
+        <div className="text-3xl md:text-4xl font-serif mb-4">Get in touch</div>
         <div className="mb-8 text-gray-700 text-[16px] max-w-md">
           Reach out to us anytime. We’re here to answer your questions promptly.
         </div>

@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${ibmPlexSans.variable} antialiased`}>
         <Navbar />
-        <div className="pt-28">{children}</div>
+        <div className="pt-20 md:pt-28">{children}</div>
         <Footer />
         <Link
           href="https://wa.me/919008255433?text=Hey!"

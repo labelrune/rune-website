@@ -24,7 +24,7 @@ export default async function Page({
 
   return (
     <div className="flex w-screen justify-center p-4 max-w-screen overflow-x-hidden">
-      <div className="max-w-7xl w-full self-center mt-8">
+      <div className="max-w-7xl w-full self-center mt-4 md:mt-8">
         <ProductInfo
           productData={productData}
           associatedProducts={filteredAssociatedProducts}

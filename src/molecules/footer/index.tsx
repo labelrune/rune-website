@@ -7,16 +7,16 @@ import { footerData } from "src/constants/FooterData";
 
 export const Footer = () => {
   return (
-    <footer className="w-full max-w-7xl mx-auto bg-white text-black px-6 py-12 border-t-2 border-gray-100">
-      <div className="grid grid-cols-1 md:grid-cols-4 max-sm:gap-10 mb-10">
+    <footer className="w-full max-w-7xl mx-auto bg-white text-black px-6 py-3 md:py-12 border-t-2 border-gray-100">
+      <div className="grid grid-cols-1 md:grid-cols-4 max-sm:gap-3 mb-3 md:mb-10">
         <Link
           href="/"
-          className="max-sm:flex-1 flex justify-center md:justify-start items-center gap-2"
+          className="flex justify-center md:justify-start items-center gap-2"
         >
           <img
             src="/rune-text.png"
             alt="rune-text"
-            className="h-32 w-32 object-cover"
+            className="w-1/2 aspect-video object-cover"
           />
         </Link>
 
@@ -35,7 +35,7 @@ export const Footer = () => {
           </ul>
         </div>
 
-        <div>
+        <div className="max-md:py-4 max-md:pt-6">
           <h3 className="font-serif text-lg mb-4">{footerData.info.title}</h3>
           <ul className="space-y-2 text-sm">
             {footerData.info.links.map((link) => (
@@ -100,9 +100,9 @@ export const Footer = () => {
           <FaInstagram className="text-xl" />
         </a>
       </div> */}
-      <div className="border-t border-gray-300 flex max-sm:py-2 flex-col md:flex-row items-center justify-center gap-4">
+      <div className="border-t border-gray-300 flex pt-2 md:pt-3 max-sm:pb-1 flex-col md:flex-row items-center justify-center gap-4">
         <p className="text-xs text-center md:text-left">
-          Copyright©RUNE. All rights reserved
+          Copyright © RUNE. All rights reserved
         </p>
       </div>
     </footer>

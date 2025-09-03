@@ -136,10 +136,9 @@ export default function StoreProducts({ products }: { products: FBProduct[] }) {
                   <div className="w-full aspect-[2/3] flex justify-center items-center overflow-hidden rounded-sm">
                     <img className="w-full h-full object-cover transition-transform hover:scale-105 duration-700" src={Object.values(imageLinks)[0]} />
                   </div>
-                  <div className="hover:underline">{productName}</div>
+                  <div className="hover:underline text-lg">{productName}</div>
                   {(netPrice || grossPrice) && (
-                    <div className="flex flex-row gap-2 text-lg">
-                      <span>MRP</span>
+                    <div className="flex flex-row gap-2">
                       <span className="relative max-md:hidden">
                         <span>{grossPrice ? formatPrice(grossPrice) : ""}</span>
                         <span className="absolute inset-0 m-auto w-full max-h-0.5 bg-black" />

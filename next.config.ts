@@ -1,7 +1,5 @@
 import type { NextConfig } from "next";
 
-// remove this comment for deployment
-
 const nextConfig: NextConfig = {
   /* config options here */
   eslint: {

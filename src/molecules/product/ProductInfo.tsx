@@ -11,6 +11,7 @@ import { createPortal } from "react-dom";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
 import { FaFire, FaLeaf, FaLock, FaShippingFast, FaStar } from "react-icons/fa";
+import FeatureMarquee, { defaultItems } from "../common/FeatureMarquee";
 
 const highlights = [
   {
@@ -34,6 +35,8 @@ const highlights = [
     text: "Secure Payment Gateway",
   },
 ];
+
+<div className="text-green-500"></div>;
 
 export default function ProductInfo({
   productData: product,
@@ -339,7 +342,9 @@ export default function ProductInfo({
             </div>
           )}
           {selectedSize.netPrice !== "" && (
+
             <div className="text-xl">{formatPrice(selectedSize.netPrice)}</div>
+
           )}
           <div className="text-xs md:text-sm flex-1 text-balance">
             *No hidden charges.
@@ -433,9 +438,13 @@ export default function ProductInfo({
           ))}
           <div>
             <ProductAccordion />
+            {/* <FeatureMarquee items={defaultItems} speed={50} /> */}
           </div>
         </div>
-        {/* <div className="mt-4 md:hidden">
+        <div className="max-sm:block md:hidden">
+          <FeatureMarquee items={defaultItems} speed={50} />
+        </div>
+        {/* <div className="mt-4 block md:hidden">
           {
             <Marquee autoFill>
               {highlights.map((item, index) => (
@@ -449,6 +458,9 @@ export default function ProductInfo({
             </Marquee>
           }
         </div> */}
+      </div>
+      <div className="max-sm:hidden md:block md:mt-16">
+        <FeatureMarquee items={defaultItems} speed={50} />
       </div>
 
       <div className="flex flex-col my-16 gap-12 justify-center items-center w-full">

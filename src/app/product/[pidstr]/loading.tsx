@@ -21,14 +21,7 @@ const Loading = () => {
           </div>
         </div>
       </div>
-
-      <div className="absolute bottom-8 w-full flex justify-center items-center">
-        <div className="relative">
-          <div className="absolute animate-spin rounded-full border-t-4 border-b-4 border-blue-500 border-solid w-24 h-24"></div>
-          <div className="absolute animate-pulse w-16 h-16 rounded-full border-4 border-gray-200 border-t-4 border-t-blue-500"></div>
-        </div>
-      </div>
-    </div>
+    </div >
   );
 };
 

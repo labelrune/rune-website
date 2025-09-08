@@ -36,8 +36,6 @@ const highlights = [
   },
 ];
 
-<div className="text-green-500"></div>;
-
 export default function ProductInfo({
   productData: product,
   associatedProducts,
@@ -445,9 +443,9 @@ export default function ProductInfo({
             {/* <FeatureMarquee items={defaultItems} speed={50} /> */}
           </div>
         </div>
-        <div className="max-sm:block md:hidden">
+        {/* <div className="max-sm:block md:hidden">
           <FeatureMarquee items={defaultItems} speed={50} />
-        </div>
+        </div> */}
         {/* <div className="mt-4 block md:hidden">
           {
             <Marquee autoFill>
@@ -463,9 +461,9 @@ export default function ProductInfo({
           }
         </div> */}
       </div>
-      <div className="max-sm:hidden md:block md:mt-16">
+      {/* <div className="max-sm:hidden md:block md:mt-16">
         <FeatureMarquee items={defaultItems} speed={50} />
-      </div>
+      </div> */}
 
       <div className="flex flex-col my-16 gap-12 justify-center items-center w-full">
         <div className="text-3xl">Handpicked for you</div>

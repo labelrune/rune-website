@@ -1,13 +1,10 @@
 import React from "react";
 import Marquee from "react-fast-marquee";
-import { FaTruck, FaShieldAlt, FaLock, FaHeadset } from "react-icons/fa";
+import { FaHeadset, FaLock, FaShieldAlt, FaTruck } from "react-icons/fa";
 import {
-  FaCcVisa,
   FaCcMastercard,
-  FaApplePay,
-  FaGooglePay,
+  FaCcVisa
 } from "react-icons/fa6";
-import { SiRazorpay, SiPaytm } from "react-icons/si";
 
 export const defaultItems: { icon: React.ReactNode; label: string }[] = [
   { icon: <FaTruck className="size-5" aria-hidden />, label: "Fast Delivery" },
@@ -52,9 +49,9 @@ export default function FeatureMarquee({
           gradient={false}
         >
           <ul className="flex items-center gap-6 py-3 pr-6">
-            {items.map((it, idx) => (
+            {items.map((it) => (
               <li
-                key={idx}
+                key={it.label}
                 className="group inline-flex items-center gap-2 rounded-xl bg-gray-100 px-3 py-2 text-sm font-medium text-gray-700 shadow-sm transition hover:-translate-y-0.5 hover:bg-gray-200 hover:shadow-md"
                 aria-label={typeof it.label === "string" ? it.label : undefined}
               >

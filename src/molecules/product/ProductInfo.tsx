@@ -1,17 +1,15 @@
 "use client";
 
-import React, { useState } from "react";
-import { FBProduct, SizeChart } from "src/types/common";
-import { formatPrice } from "src/utils/common";
-import ProductAccordion from "../common/ProductAccordian";
+import Link from "next/link";
+import { useState } from "react";
+import { createPortal } from "react-dom";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import { createPortal } from "react-dom";
-import Link from "next/link";
-import Marquee from "react-fast-marquee";
-import { FaFire, FaLeaf, FaLock, FaShippingFast, FaStar } from "react-icons/fa";
+import { FBProduct, SizeChart } from "src/types/common";
+import { formatPrice } from "src/utils/common";
 import FeatureMarquee, { defaultItems } from "../common/FeatureMarquee";
+import ProductAccordion from "../common/ProductAccordian";
 
 const highlights = [
   {
@@ -443,9 +441,9 @@ export default function ProductInfo({
             {/* <FeatureMarquee items={defaultItems} speed={50} /> */}
           </div>
         </div>
-        {/* <div className="max-sm:block md:hidden">
+        <div className="max-sm:block md:hidden">
           <FeatureMarquee items={defaultItems} speed={50} />
-        </div> */}
+        </div>
         {/* <div className="mt-4 block md:hidden">
           {
             <Marquee autoFill>
@@ -461,9 +459,9 @@ export default function ProductInfo({
           }
         </div> */}
       </div>
-      {/* <div className="max-sm:hidden md:block md:mt-16">
+      <div className="max-sm:hidden md:block md:mt-16">
         <FeatureMarquee items={defaultItems} speed={50} />
-      </div> */}
+      </div>
 
       <div className="flex flex-col my-16 gap-12 justify-center items-center w-full">
         <div className="text-3xl">Handpicked for you</div>

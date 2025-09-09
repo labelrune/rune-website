@@ -44,10 +44,57 @@ export default function FeatureMarquee({
 
         <Marquee
           speed={speed}
-          autoFill
           pauseOnHover={pauseOnHover}
-          gradient={false}
+          gradient={true}
         >
+          <ul className="flex items-center gap-6 py-3 pr-6">
+            {items.map((it) => (
+              <li
+                key={it.label}
+                className="group inline-flex items-center gap-2 rounded-xl bg-gray-100 px-3 py-2 text-sm font-medium text-gray-700 shadow-sm transition hover:-translate-y-0.5 hover:bg-gray-200 hover:shadow-md"
+                aria-label={typeof it.label === "string" ? it.label : undefined}
+              >
+                <span className="text-gray-800">{it.icon}</span>
+                <span className="whitespace-nowrap">{it.label}</span>
+              </li>
+            ))}
+          </ul>
+          <ul className="flex items-center gap-6 py-3 pr-6">
+            {items.map((it) => (
+              <li
+                key={it.label}
+                className="group inline-flex items-center gap-2 rounded-xl bg-gray-100 px-3 py-2 text-sm font-medium text-gray-700 shadow-sm transition hover:-translate-y-0.5 hover:bg-gray-200 hover:shadow-md"
+                aria-label={typeof it.label === "string" ? it.label : undefined}
+              >
+                <span className="text-gray-800">{it.icon}</span>
+                <span className="whitespace-nowrap">{it.label}</span>
+              </li>
+            ))}
+          </ul>
+          <ul className="flex items-center gap-6 py-3 pr-6">
+            {items.map((it) => (
+              <li
+                key={it.label}
+                className="group inline-flex items-center gap-2 rounded-xl bg-gray-100 px-3 py-2 text-sm font-medium text-gray-700 shadow-sm transition hover:-translate-y-0.5 hover:bg-gray-200 hover:shadow-md"
+                aria-label={typeof it.label === "string" ? it.label : undefined}
+              >
+                <span className="text-gray-800">{it.icon}</span>
+                <span className="whitespace-nowrap">{it.label}</span>
+              </li>
+            ))}
+          </ul>
+          <ul className="flex items-center gap-6 py-3 pr-6">
+            {items.map((it) => (
+              <li
+                key={it.label}
+                className="group inline-flex items-center gap-2 rounded-xl bg-gray-100 px-3 py-2 text-sm font-medium text-gray-700 shadow-sm transition hover:-translate-y-0.5 hover:bg-gray-200 hover:shadow-md"
+                aria-label={typeof it.label === "string" ? it.label : undefined}
+              >
+                <span className="text-gray-800">{it.icon}</span>
+                <span className="whitespace-nowrap">{it.label}</span>
+              </li>
+            ))}
+          </ul>
           <ul className="flex items-center gap-6 py-3 pr-6">
             {items.map((it) => (
               <li

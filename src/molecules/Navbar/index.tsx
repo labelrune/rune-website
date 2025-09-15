@@ -18,7 +18,7 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [expandedMobileDropdown, setExpandedMobileDropdown] = useState<
     string | null
-  >(null);
+  >("2");
   const toggleMobileMenu = () => setMobileMenuOpen((prev) => !prev);
   const navRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
@@ -40,7 +40,7 @@ const Navbar = () => {
       <div ref={navRef} className="fixed top-0 left-0 w-full z-50">
         <NavbarDisclaimer />
 
-        <nav className="w-full border-b border-gray-200 bg-white">
+        <nav className="w-full bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16 md:h-20">
               {/* Left: Hamburger (mobile only) */}
@@ -132,7 +132,7 @@ const Navbar = () => {
           </div>
 
           <div
-            className={`fixed top-0 left-0 h-full flex flex-col justify-center gap-3 w-3/4 max-w-xs bg-white shadow-lg transform transition-transform duration-300 z-40 ${
+            className={`fixed bg-white bottom-0 left-0 h-[calc(100dvh-96px)] flex flex-col justify-center gap-3 w-3/4 max-w-xs transform transition-transform duration-300 z-40 ${
               mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
             } md:hidden`}
           >
@@ -207,9 +207,9 @@ const Navbar = () => {
 
           {mobileMenuOpen && (
             <div
-              className="fixed inset-0 bg-transparent bg-opacity-100 z-30 md:hidden"
+              className="fixed bottom-0 right-0 w-full bg-black opacity-50 h-[calc(100dvh-97px)] z-30 md:hidden"
               onClick={toggleMobileMenu}
-            ></div>
+            />
           )}
         </nav>
       </div>

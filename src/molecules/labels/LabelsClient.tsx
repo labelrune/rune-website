@@ -59,7 +59,7 @@ const LabelsClient = ({
               className="snap-center flex flex-col gap-2 md:gap-3 group"
               href={`product/${item.id}-${toKebabCase(item.productName)}`}
             >
-              <div className="md:w-[357px] w-[311.3px] md:aspect-[357/618] h-[530px] relative cursor-pointer rounded-sm overflow-hidden">
+              <div className="md:w-[357px] aspect-[311.3/530] w-[85vw] md:aspect-[357/618] relative cursor-pointer rounded-sm overflow-hidden">
                 <img
                   src={item.imageLinks[1]}
                   alt={item.productName}

@@ -8,6 +8,7 @@ import { NavItems } from "src/constants/NavbarData";
 import { useRouter } from "next/navigation";
 
 import localFont from "next/font/local";
+import { TbHanger } from "react-icons/tb";
 
 const LogoFont = localFont({
   src: "./TrajanPro-Regular.otf",
@@ -61,7 +62,7 @@ const Navbar = () => {
                 <img
                   src="/rune-text.png"
                   alt="rune-text"
-                  className="h-32 w-32 object-cover"
+                  className="h-32 w-32 object-cover scale-150"
                 />
               </Link>
 
@@ -117,16 +118,13 @@ const Navbar = () => {
                 })}
               </div>
 
-              <div className="flex items-center space-x-6">
-                {/* <button aria-label="Search">
-                  <FiSearch className="w-5 h-5 text-gray-800 hover:text-gray-600" />
-                </button>
-                <Link href={"/"} aria-label="Account" className="hidden md:block">
-                  <FiUser className="w-5 h-5 text-gray-800 hover:text-gray-600" />
-                </Link>
-                <Link href="/" aria-label="Cart">
-                  <FiShoppingBag className="w-5 h-5 text-gray-800 hover:text-gray-600" />
+              <div className="flex items-center">
+                {/* <Link href="/collections/all" aria-label="Account" className="translate-x-7.5 scale-150">
+                  <TbHanger size={30} color="#000" className="" />
                 </Link> */}
+                <Link href="/collections/all" aria-label="Account" className="">
+                  <TbHanger size={35} color="#000" className="" />
+                </Link>
               </div>
             </div>
           </div>
@@ -176,7 +174,6 @@ const Navbar = () => {
                                 className="block text-gray-600 text-base"
                                 onClick={() => {
                                   setMobileMenuOpen(false);
-                                  setExpandedMobileDropdown(null);
                                 }}
                               >
                                 {dd.label}

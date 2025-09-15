@@ -146,7 +146,7 @@ export default function ProductAccordion() {
           <div
             className={`overflow-hidden transition-all duration-300 ${
               openId === item.id
-                ? "max-h-96 opacity-100 md:p-4 max-sm:pb-4"
+                ? "max-h-96 opacity-100 md:p-4 max-sm:pb-6"
                 : "max-h-0 opacity-0"
             }`}
           >

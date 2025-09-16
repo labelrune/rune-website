@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 
 import localFont from "next/font/local";
 import { TbHanger } from "react-icons/tb";
+import { FaInstagram } from "react-icons/fa";
 
 const LogoFont = localFont({
   src: "./TrajanPro-Regular.otf",
@@ -82,18 +83,16 @@ const Navbar = () => {
                             router.push(item.href);
                           }
                         }}
-                        className={`flex items-center gap-1 text-sm ${
-                          item.isHighlighted
+                        className={`flex items-center gap-1 text-sm ${item.isHighlighted
                             ? "text-red-500"
                             : "text-gray-800 hover:text-gray-600"
-                        } hover:underline hover:underline-offset-4`}
+                          } hover:underline hover:underline-offset-4`}
                       >
                         {item.label}
                         {item.hasDropdown && (
                           <FiChevronDown
-                            className={`text-lg transition-transform ${
-                              isOpen ? "rotate-180" : ""
-                            }`}
+                            className={`text-lg transition-transform ${isOpen ? "rotate-180" : ""
+                              }`}
                           />
                         )}
                       </div>
@@ -130,9 +129,8 @@ const Navbar = () => {
           </div>
 
           <div
-            className={`fixed bg-white bottom-0 left-0 h-[calc(100dvh-96px)] flex flex-col justify-center gap-3 w-3/4 max-w-xs transform transition-transform duration-300 z-40 ${
-              mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-            } md:hidden`}
+            className={`fixed bg-white bottom-0 left-0 h-[calc(100dvh-96px)] flex flex-col justify-center gap-3 w-3/4 max-w-xs transform transition-transform duration-300 z-40 ${mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+              } md:hidden`}
           >
             <div className="p-6 space-y-4">
               {NavItems.map((item) => {
@@ -151,18 +149,16 @@ const Navbar = () => {
                           }
                         >
                           <span
-                            className={`${
-                              item.isHighlighted
+                            className={`${item.isHighlighted
                                 ? "text-red-500"
                                 : "text-gray-800"
-                            }`}
+                              }`}
                           >
                             {item.label}
                           </span>
                           <FiChevronDown
-                            className={`transition-transform duration-300 ${
-                              isExpanded ? "rotate-180" : ""
-                            }`}
+                            className={`transition-transform duration-300 ${isExpanded ? "rotate-180" : ""
+                              }`}
                           />
                         </button>
                         {isExpanded && (
@@ -185,9 +181,8 @@ const Navbar = () => {
                     ) : (
                       <Link
                         href={item.href}
-                        className={`block text-lg ${
-                          item.isHighlighted ? "text-red-500" : "text-gray-800"
-                        }`}
+                        className={`block text-lg ${item.isHighlighted ? "text-red-500" : "text-gray-800"
+                          }`}
                         onClick={() => {
                           setOpenDropdown(null);
                           setMobileMenuOpen(false);
@@ -199,6 +194,18 @@ const Navbar = () => {
                   </div>
                 );
               })}
+              <div>
+                <Link
+                  href={"https://instagram.com/label_rune"}
+                  className="block text-lg text-gray-800"
+                  onClick={() => {
+                    setOpenDropdown(null);
+                    setMobileMenuOpen(false);
+                  }}
+                >
+                  Follow Us <FaInstagram size={27.5} className="mt-4" />
+                </Link>
+              </div>
             </div>
           </div>
 

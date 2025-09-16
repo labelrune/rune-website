@@ -7,7 +7,7 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { FBProduct, SizeChart } from "src/types/common";
-import { formatPrice } from "src/utils/common";
+import { formatPrice, toKebabCase } from "src/utils/common";
 import FeatureMarquee, { defaultItems } from "../common/FeatureMarquee";
 import ProductAccordion from "../common/ProductAccordian";
 
@@ -34,6 +34,57 @@ const highlights = [
   },
 ];
 
+const ProductHeader = ({ id, productName } : {
+  id: string;
+  productName: string;
+}) => {
+  const [showToast, setShowToast] = useState(false);
+
+  const productUrl = `${typeof window !== 'undefined' ? window.location.origin : ''}/product/${id}-${toKebabCase(productName)}`;
+
+  const handleShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'Check out this product at Label Rune!',
+          text: `Take a look at "${productName}"`,
+          url: productUrl,
+        });
+      } catch (error) {
+        console.error('Sharing failed:', error);
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(productUrl);
+        setShowToast(true);
+        setTimeout(() => setShowToast(false), 2000);
+      } catch (err) {
+        alert('Could not copy the link. Please copy manually.');
+      }
+    }
+  };
+
+  return (
+    <>
+      <div className="flex flex-row justify-between items-center">
+        <div className="text-4xl">{productName}</div>
+        <button
+          onClick={handleShare}
+          className="text-sm text-blue-900 hover:underline cursor-pointer font-semibold"
+        >
+          Share
+        </button>
+      </div>
+
+      {showToast && (
+        <div className="mt-2 p-2 bg-green-100 text-green-800 text-sm rounded shadow w-fit">
+          Copied to clipboard!
+        </div>
+      )}
+    </>
+  );
+};
+
 export default function ProductInfo({
   productData: product,
   associatedProducts,
@@ -43,7 +94,7 @@ export default function ProductInfo({
 }) {
   const imageLinks = Object.values(product.imageLinks);
 
-  const { productName, description, specification } = product;
+  const { id, productName, description, specification } = product;
   const sizeOrder = ["XS", "S", "M", "L", "XL", "XXL"];
 
   const sortedSizePrices = Object.fromEntries(
@@ -334,7 +385,7 @@ export default function ProductInfo({
           </div>
         </div>
         <div className="max-md:flex-1 md:w-full flex flex-col justify-start gap-1">
-          <div className="text-4xl">{productName}</div>
+          <ProductHeader id={id} productName={productName} />
           {selectedSize.grossPrice !== "" && (
             <div className="text-xl mt-2 line-through">
               {formatPrice(selectedSize.grossPrice)}

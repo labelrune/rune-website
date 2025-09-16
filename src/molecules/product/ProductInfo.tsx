@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { createPortal } from "react-dom";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { FiChevronLeft, FiChevronRight, FiShare2 } from "react-icons/fi";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { FBProduct, SizeChart } from "src/types/common";
@@ -70,9 +70,9 @@ const ProductHeader = ({ id, productName } : {
         <div className="text-4xl">{productName}</div>
         <button
           onClick={handleShare}
-          className="text-sm text-blue-900 hover:underline cursor-pointer font-semibold"
+          className="text-sm text-blue-900 underline underline-offset-2 cursor-pointer font-semibold flex flex-row gap-1 items-center"
         >
-          Share
+          Share Via <FiShare2 size="15" color="#1c398e" />
         </button>
       </div>
 
@@ -463,7 +463,7 @@ export default function ProductInfo({
             className="mt-8 text-lg whitespace-pre-wrap"
             dangerouslySetInnerHTML={{ __html: description }}
           ></div>
-          <hr className="max-sm:text-gray-200" />
+          <hr className="max-sm:text-gray-200 my-4" />
           <div>
             Looking for customization? Drop us an email at{" "}
             <Link
